@@ -1,0 +1,11 @@
+package cn.com.cdboost.charge.customer.service;
+
+import cn.com.cdboost.charge.customer.common.BaseService;
+import cn.com.cdboost.charge.customer.model.OrgWxMchConfig;
+
+/**
+ * 组织微信服务商关联表单表接口
+ */
+public interface OrgWxMchConfigService extends BaseService<OrgWxMchConfig> {
+
+}

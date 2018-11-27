@@ -1,0 +1,356 @@
+package cn.com.cdboost.charge.customer.dubbo.impl;
+
+import cn.com.cdboost.charge.base.util.DateUtil;
+import cn.com.cdboost.charge.base.vo.PageData;
+import cn.com.cdboost.charge.customer.dubbo.CustomerToMerchantService;
+import cn.com.cdboost.charge.customer.model.CustomerPayCard;
+import cn.com.cdboost.charge.customer.model.DeviceUseDetailed;
+import cn.com.cdboost.charge.customer.service.ICustomerPayCardService;
+import cn.com.cdboost.charge.customer.service.ICustomerPayService;
+import cn.com.cdboost.charge.customer.service.IDeviceUseDetailedService;
+import cn.com.cdboost.charge.customer.vo.info.*;
+import cn.com.cdboost.charge.customer.vo.param.IncomePageQueryParam;
+import cn.com.cdboost.charge.customer.vo.param.IncomeQueryParam;
+import cn.com.cdboost.charge.settlement.constant.AccountDictEnum;
+import cn.com.cdboost.charge.settlement.dubbo.AccountService;
+import cn.com.cdboost.charge.settlement.vo.info.UserAccountInfo;
+import cn.com.cdboost.charge.settlement.vo.param.AccountQueryVo;
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.config.annotation.Service;
+import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableListMultimap;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Multimaps;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
+import org.springframework.util.CollectionUtils;
+
+import javax.annotation.Nullable;
+import javax.annotation.Resource;
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * 客户提供给商户的相关服务实现
+ */
+@Slf4j
+@Service(version = "1.0",retries = -1)
+public class CustomerToMerchantServiceImpl implements CustomerToMerchantService {
+    @Resource
+    private ICustomerPayService iCustomerPayService;
+    @Reference(version = "1.0")
+    private AccountService accountService;
+    @Resource
+    private IDeviceUseDetailedService iDeviceUseDetailedService;
+    @Resource
+    private ICustomerPayCardService iCustomerPayCardService;
+
+    @Override
+    public ProjectIncomeInfo queryProjectIncome(IncomeQueryParam queryParam) {
+        ProjectIncomeInfo projectIncomeInfo = new ProjectIncomeInfo();
+        ProjectIncomeMonthInfo projectIncomeMonthInfo = new ProjectIncomeMonthInfo();
+        List<ProjectIncomeDayInfo> projectIncomeDayInfos = Lists.newArrayList();
+        //设置年份
+        int year = Integer.parseInt(queryParam.getBeginTime().substring(0,4));
+        //设置月份
+        int month = Integer.parseInt(queryParam.getBeginTime().substring(5,7));
+        int monthMaxDay = DateUtil.getMonthMaxDay(year, month);
+        for (int i = 1; i <= monthMaxDay; i++) {
+            ProjectIncomeDayInfo projectIncomeDayInfo = new ProjectIncomeDayInfo();
+            if (i < 10) {
+                projectIncomeDayInfo.setInComeDate(month + "-0" + i);
+            }
+            projectIncomeDayInfo.setInComeDate(month + "-" + i);
+            projectIncomeDayInfos.add(projectIncomeDayInfo);
+        }
+        //查询站点充电记录
+        List<DeviceUseDetailed> deviceUseDetaileds = iDeviceUseDetailedService.queryUseDetail(queryParam);
+        //查询站点ic卡充值记录
+        List<CustomerPayCard> customerPayCards = iCustomerPayCardService.queryCustomerPayCard(queryParam);
+        //按充电结束时间分组
+        ImmutableListMultimap<Object, DeviceUseDetailed> useMultimap = Multimaps.index(deviceUseDetaileds, new Function<DeviceUseDetailed, Object>() {
+            @Nullable
+            @Override
+            public Object apply(@Nullable DeviceUseDetailed input) {
+                return DateUtil.formatDate(input.getEndTime()).substring(5, 10);
+            }
+        });
+        //按充值时间分组
+        ImmutableListMultimap<Object, CustomerPayCard> payMultimap = Multimaps.index(customerPayCards, new Function<CustomerPayCard, Object>() {
+            @Nullable
+            @Override
+            public Object apply(@Nullable CustomerPayCard input) {
+                return DateUtil.formatDate(input.getCreateTime()).substring(5, 10);
+            }
+        });
+        //一个月使用的电量
+        BigDecimal userPower = BigDecimal.ZERO;
+        //一个月总收入
+        BigDecimal incomeMoneyTotal = BigDecimal.ZERO;
+        for (ProjectIncomeDayInfo projectIncomeDayInfo : projectIncomeDayInfos) {
+            ImmutableList<DeviceUseDetailed> detaileds = useMultimap.get(projectIncomeDayInfo.getInComeDate());
+            ImmutableList<CustomerPayCard> payCards = payMultimap.get(projectIncomeDayInfo.getInComeDate());
+            BigDecimal inComeMoney = BigDecimal.ZERO;
+            //充电收入
+            for (DeviceUseDetailed detailed : detaileds) {
+                inComeMoney = inComeMoney.add(detailed.getProfitable());
+                userPower = userPower.add(detailed.getUsePower());
+                incomeMoneyTotal = incomeMoneyTotal.add(detailed.getProfitable());
+            }
+            //ic卡充值收入
+            for (CustomerPayCard payCard : payCards) {
+                inComeMoney = inComeMoney.add(payCard.getPayMoney());
+                incomeMoneyTotal = incomeMoneyTotal.add(payCard.getPayMoney());
+            }
+            projectIncomeDayInfo.setInComeMoney(inComeMoney);
+        }
+        projectIncomeMonthInfo.setUsePowerTotal(userPower);
+        projectIncomeMonthInfo.setIncomeMoneyTotal(incomeMoneyTotal);
+        projectIncomeInfo.setProjectIncomeDayInfo(projectIncomeDayInfos);
+        projectIncomeInfo.setProjectIncomeMonthInfo(projectIncomeMonthInfo);
+        return projectIncomeInfo;
+    }
+
+    @Override
+    public PageData<ChargingIncomeInfo> queryProjectChargingIncome(IncomePageQueryParam queryParam) {
+        //查询站点充电记录
+        PageData<DeviceUseDetailed> pageData = iDeviceUseDetailedService.queryUseDetailPage(queryParam);
+        PageData<ChargingIncomeInfo> pageDataResp = new PageData<ChargingIncomeInfo>();
+        List<ChargingIncomeInfo> infos = Lists.newArrayList();
+        if (!CollectionUtils.isEmpty(pageData.getList())){
+            for (DeviceUseDetailed deviceUseDetailed : pageData.getList()) {
+                ChargingIncomeInfo incomeInfo = new ChargingIncomeInfo();
+                BeanUtils.copyProperties(deviceUseDetailed,incomeInfo);
+                incomeInfo.setInComeTime(DateUtil.formatDate(deviceUseDetailed.getEndTime()).substring(11,16));
+                infos.add(incomeInfo);
+            }
+            pageDataResp.setList(infos);
+        }
+        pageDataResp.setTotal(pageData.getTotal());
+        return pageDataResp;
+    }
+
+    @Override
+    public PageData<IcCardIncomeInfo> queryProjectIcCardIncome(IncomePageQueryParam queryParam) {
+        PageData<IcCardIncomeInfo> pageDataResp = new PageData<>();
+        //查询站点ic卡充值记录
+        PageData<CustomerPayCard> pageData = iCustomerPayCardService.queryCustomerPayCardPage(queryParam);
+        List<IcCardIncomeInfo> icCardIncomeInfos = Lists.newArrayList();
+        if (!CollectionUtils.isEmpty(pageData.getList())) {
+            for (CustomerPayCard customerPayCard : pageData.getList()) {
+                IcCardIncomeInfo incomeInfo = new IcCardIncomeInfo();
+                BeanUtils.copyProperties(customerPayCard, incomeInfo);
+                incomeInfo.setInComeTime(DateUtil.formatDate(customerPayCard.getCreateTime()).substring(11, 16));
+                icCardIncomeInfos.add(incomeInfo);
+            }
+            pageDataResp.setList(icCardIncomeInfos);
+        }
+        pageDataResp.setTotal(pageData.getTotal());
+        return pageDataResp;
+    }
+
+    @Override
+    public IncomeCurveInfo queryIncomeCurve(IncomeQueryParam queryParam) {
+        IncomeCurveInfo incomeCurveInfo = new IncomeCurveInfo();
+        //查询站点充电记录
+        List<DeviceUseDetailed> deviceUseDetaileds = iDeviceUseDetailedService.queryUseDetail(queryParam);
+        //查询站点ic卡充值记录
+        List<CustomerPayCard> customerPayCards = iCustomerPayCardService.queryCustomerPayCard(queryParam);
+        //按充电结束时间分组
+        ImmutableListMultimap<Object, DeviceUseDetailed> useMultimap = Multimaps.index(deviceUseDetaileds, new Function<DeviceUseDetailed, Object>() {
+            @Nullable
+            @Override
+            public Object apply(@Nullable DeviceUseDetailed input) {
+                return DateUtil.formatDate(input.getEndTime()).substring(0, 10);
+            }
+        });
+        //按充值时间分组
+        ImmutableListMultimap<Object, CustomerPayCard> payMultimap = Multimaps.index(customerPayCards, new Function<CustomerPayCard, Object>() {
+            @Nullable
+            @Override
+            public Object apply(@Nullable CustomerPayCard input) {
+                return DateUtil.formatDate(input.getCreateTime()).substring(0, 10);
+            }
+        });
+        List<String> dates = DateUtil.getDates(queryParam.getBeginTime(), queryParam.getEndTime());
+        //时间区间充电收入
+        BigDecimal chargingIncome = BigDecimal.ZERO;
+        //时间区间ic卡充值收入
+        BigDecimal icCardIncome = BigDecimal.ZERO;
+        List<BigDecimal> yData = Lists.newArrayList();
+        for (String date : dates) {
+            ImmutableList<DeviceUseDetailed> detaileds = useMultimap.get(date);
+            ImmutableList<CustomerPayCard> payCards = payMultimap.get(date);
+            //每天总收入
+            BigDecimal inComeMoney = BigDecimal.ZERO;
+            //时间区间总收入
+            //BigDecimal incomeMoneyTotal = BigDecimal.ZERO;
+            //充电收入
+            for (DeviceUseDetailed detailed : detaileds) {
+                inComeMoney = inComeMoney.add(detailed.getProfitable());
+                chargingIncome = chargingIncome.add(detailed.getProfitable());
+                //incomeMoneyTotal = incomeMoneyTotal.add(detailed.getProfitable());
+            }
+            //ic卡充值收入
+            for (CustomerPayCard payCard : payCards) {
+                inComeMoney = inComeMoney.add(payCard.getPayMoney());
+                icCardIncome = icCardIncome.add(payCard.getPayMoney());
+                //incomeMoneyTotal = incomeMoneyTotal.add(payCard.getPayMoney());
+            }
+            yData.add(inComeMoney);
+        }
+        incomeCurveInfo.setXData(dates);
+        incomeCurveInfo.setYData(yData);
+        incomeCurveInfo.setChargingIncome(chargingIncome);
+        incomeCurveInfo.setIcCardIncome(icCardIncome);
+        //查询商户账户信息
+        AccountQueryVo queryVo = new AccountQueryVo();
+        queryVo.setAccountGuid(queryParam.getMerchantGuid());
+        queryVo.setAccountCode(AccountDictEnum.MERCHANT_AVAILABLE.getAccountCode());
+        UserAccountInfo accountInfo = accountService.queryAccountInfo(queryVo);
+        incomeCurveInfo.setRemainAmount(accountInfo.getRemainAmount());
+        return incomeCurveInfo;
+    }
+
+    @Override
+    public List<PropertyIncomeInfo> queryPropertyIncomeInfo(IncomeQueryParam queryParam) {
+        List<PropertyIncomeInfo> respList = Lists.newArrayList();
+        List<DeviceUseDetailed> deviceUseDetaileds = iDeviceUseDetailedService.queryUseDetail(queryParam);
+        //查询站点ic卡充值记录
+        List<CustomerPayCard> customerPayCards = iCustomerPayCardService.queryCustomerPayCard(queryParam);
+        //按物业分组
+        ImmutableListMultimap<Object, DeviceUseDetailed> useMultimap = Multimaps.index(deviceUseDetaileds, new Function<DeviceUseDetailed, Object>() {
+            @Nullable
+            @Override
+            public Object apply(@Nullable DeviceUseDetailed input) {
+                return input.getPropertyGuid();
+            }
+        });
+        //按物业分组
+        ImmutableListMultimap<Object, CustomerPayCard> payMultimap = Multimaps.index(customerPayCards, new Function<CustomerPayCard, Object>() {
+            @Nullable
+            @Override
+            public Object apply(@Nullable CustomerPayCard input) {
+                return input.getPropertyGuid();
+            }
+        });
+        List<String> propertyGuids = queryParam.getPropertyGuids();
+        for (String propertyGuid : propertyGuids) {
+            PropertyIncomeInfo incomeInfo = new PropertyIncomeInfo();
+            incomeInfo.setPropertyGuid(propertyGuid);
+            ImmutableList<DeviceUseDetailed> detaileds = useMultimap.get(propertyGuid);
+            ImmutableList<CustomerPayCard> payCards = payMultimap.get(propertyGuid);
+            //物业充电收入
+            BigDecimal chargingIncome = BigDecimal.ZERO;
+            //物业ic卡充值收入
+            BigDecimal icCardIncome = BigDecimal.ZERO;
+            //物业总收入
+            BigDecimal inComeMoney = BigDecimal.ZERO;
+            //物业支出
+            BigDecimal cost = BigDecimal.ZERO;
+            //充电收入
+            for (DeviceUseDetailed detailed : detaileds) {
+                inComeMoney = inComeMoney.add(detailed.getProfitable());
+                chargingIncome = chargingIncome.add(detailed.getProfitable());
+                cost = cost.add(detailed.getConsumptionMoney());
+                //incomeMoneyTotal = incomeMoneyTotal.add(detailed.getProfitable());
+            }
+            //ic卡充值收入
+            for (CustomerPayCard payCard : payCards) {
+                inComeMoney = inComeMoney.add(payCard.getPayMoney());
+                icCardIncome = icCardIncome.add(payCard.getPayMoney());
+                //incomeMoneyTotal = incomeMoneyTotal.add(payCard.getPayMoney());
+            }
+            incomeInfo.setChargingIncome(chargingIncome);
+            incomeInfo.setIcCardIncome(icCardIncome);
+            incomeInfo.setInComeMoney(icCardIncome.divide(cost));
+            incomeInfo.setCost(cost);
+            respList.add(incomeInfo);
+        }
+        return respList;
+    }
+
+    @Override
+    public List<ProjectIncomeListInfo> queryProjectIncomeInfo(IncomeQueryParam queryParam) {
+        List<ProjectIncomeListInfo> respList = Lists.newArrayList();
+        List<DeviceUseDetailed> deviceUseDetaileds = iDeviceUseDetailedService.queryUseDetail(queryParam);
+        //查询站点ic卡充值记录
+        List<CustomerPayCard> customerPayCards = iCustomerPayCardService.queryCustomerPayCard(queryParam);
+        //按站点分组
+        ImmutableListMultimap<Object, DeviceUseDetailed> useMultimap = Multimaps.index(deviceUseDetaileds, new Function<DeviceUseDetailed, Object>() {
+            @Nullable
+            @Override
+            public Object apply(@Nullable DeviceUseDetailed input) {
+                return input.getProjectGuid();
+            }
+        });
+        //按站点分组
+        ImmutableListMultimap<Object, CustomerPayCard> payMultimap = Multimaps.index(customerPayCards, new Function<CustomerPayCard, Object>() {
+            @Nullable
+            @Override
+            public Object apply(@Nullable CustomerPayCard input) {
+                return input.getProjectGuid();
+            }
+        });
+        List<String> projectGuids = queryParam.getProjectGuids();
+        for (String projectGuid : projectGuids) {
+            ProjectIncomeListInfo incomeInfo = new ProjectIncomeListInfo();
+            incomeInfo.setProjectGuid(projectGuid);
+            ImmutableList<DeviceUseDetailed> detaileds = useMultimap.get(projectGuid);
+            ImmutableList<CustomerPayCard> payCards = payMultimap.get(projectGuid);
+            //物业充电收入
+            BigDecimal chargingIncome = BigDecimal.ZERO;
+            //物业ic卡充值收入
+            BigDecimal icCardIncome = BigDecimal.ZERO;
+            //物业总收入
+            BigDecimal inComeMoney = BigDecimal.ZERO;
+            //物业支出
+            BigDecimal cost = BigDecimal.ZERO;
+            //充电收入
+            for (DeviceUseDetailed detailed : detaileds) {
+                inComeMoney = inComeMoney.add(detailed.getProfitable());
+                chargingIncome = chargingIncome.add(detailed.getProfitable());
+                cost = cost.add(detailed.getConsumptionMoney());
+                //incomeMoneyTotal = incomeMoneyTotal.add(detailed.getProfitable());
+            }
+            //ic卡充值收入
+            for (CustomerPayCard payCard : payCards) {
+                inComeMoney = inComeMoney.add(payCard.getPayMoney());
+                icCardIncome = icCardIncome.add(payCard.getPayMoney());
+                //incomeMoneyTotal = incomeMoneyTotal.add(payCard.getPayMoney());
+            }
+            incomeInfo.setChargingIncome(chargingIncome);
+            incomeInfo.setIcCardIncome(icCardIncome);
+            incomeInfo.setInComeMoney(icCardIncome.divide(cost));
+            incomeInfo.setCost(cost);
+            respList.add(incomeInfo);
+        }
+        return respList;
+    }
+
+    @Override
+    public PageData<UseDetailListInfo> queryUseDetailList(IncomePageQueryParam queryParam) {
+        PageData<DeviceUseDetailed> pageData = iDeviceUseDetailedService.queryUseDetailPage(queryParam);
+        PageData<UseDetailListInfo> respPageData = new PageData<>();
+        List<UseDetailListInfo> respList = Lists.newArrayList();
+        if (CollectionUtils.isEmpty(pageData.getList())){
+            for (DeviceUseDetailed deviceUseDetailed : pageData.getList()) {
+                UseDetailListInfo info = new UseDetailListInfo();
+                BeanUtils.copyProperties(deviceUseDetailed,info);
+                respList.add(info);
+            }
+            respPageData.setTotal(pageData.getTotal());
+            respPageData.setList(respList);
+        }
+        return respPageData;
+    }
+
+    @Override
+    public TodayCustomerInfo queryTodayCount(String merchantGuid) {
+        String beginTime = DateUtil.getCurrentDate() + " 00:00:00";
+        String endTime = DateUtil.getCurrentDateTime();
+        TodayCustomerInfo info = iDeviceUseDetailedService.queryTodayCount(merchantGuid,beginTime,endTime);
+        return info;
+    }
+}

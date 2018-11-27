@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.cdboost.charge.customer.dao.DeviceUseDetailedMapper">
+  <resultMap id="BaseResultMap" type="cn.com.cdboost.charge.customer.model.DeviceUseDetailed">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="project_guid" jdbcType="CHAR" property="projectGuid" />
+    <result column="merchant_guid" jdbcType="CHAR" property="merchantGuid" />
+    <result column="customer_guid" jdbcType="CHAR" property="customerGuid" />
+    <result column="charging_plie_guid" jdbcType="CHAR" property="chargingPlieGuid" />
+    <result column="pay_category" jdbcType="INTEGER" property="payCategory" />
+    <result column="charging_way" jdbcType="INTEGER" property="chargingWay" />
+    <result column="charging_time" jdbcType="INTEGER" property="chargingTime" />
+    <result column="charging_power" jdbcType="INTEGER" property="chargingPower" />
+    <result column="charging_percent" jdbcType="DECIMAL" property="chargingPercent" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="end_method" jdbcType="INTEGER" property="endMethod" />
+    <result column="use_time" jdbcType="INTEGER" property="useTime" />
+    <result column="use_power" jdbcType="DECIMAL" property="usePower" />
+    <result column="refund_money" jdbcType="DECIMAL" property="refundMoney" />
+    <result column="scheme_guid" jdbcType="CHAR" property="schemeGuid" />
+    <result column="real_price" jdbcType="DECIMAL" property="realPrice" />
+    <result column="settlement_price" jdbcType="DECIMAL" property="settlementPrice" />
+    <result column="consumption_money" jdbcType="DECIMAL" property="consumptionMoney" />
+    <result column="deduct_money" jdbcType="DECIMAL" property="deductMoney" />
+    <result column="deduct_cnt" jdbcType="INTEGER" property="deductCnt" />
+    <result column="real_power_money" jdbcType="DECIMAL" property="realPowerMoney" />
+    <result column="profitable" jdbcType="DECIMAL" property="profitable" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="charging_guid" jdbcType="CHAR" property="chargingGuid" />
+    <result column="charging_max_time" jdbcType="INTEGER" property="chargingMaxTime" />
+    <result column="after_remain_cnt" jdbcType="INTEGER" property="afterRemainCnt" />
+    <result column="after_remain_amount" jdbcType="DECIMAL" property="afterRemainAmount" />
+    <result column="dev_log_id" jdbcType="INTEGER" property="devLogId" />
+    <result column="open_means" jdbcType="INTEGER" property="openMeans" />
+    <result column="open_no" jdbcType="VARCHAR" property="openNo" />
+    <result column="max_current" jdbcType="DECIMAL" property="maxCurrent" />
+    <result column="max_power" jdbcType="DECIMAL" property="maxPower" />
+    <result column="customer_state" jdbcType="INTEGER" property="customerState" />
+    <result column="card_id" jdbcType="VARCHAR" property="cardId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="property_guid" jdbcType="VARCHAR" property="propertyGuid" />
+  </resultMap>
+
+</mapper>

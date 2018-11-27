@@ -1,0 +1,112 @@
+package cn.com.cdboost.charge.customer.dubbo;
+
+import cn.com.cdboost.charge.base.vo.PageData;
+import cn.com.cdboost.charge.customer.vo.info.*;
+import cn.com.cdboost.charge.customer.vo.param.ChargerDeviceQueryVo;
+import cn.com.cdboost.charge.customer.vo.param.IcCardCustomerParam;
+import cn.com.cdboost.charge.customer.vo.param.IncomePageQueryParam;
+import cn.com.cdboost.charge.customer.vo.param.IncomeQueryParam;
+
+import java.util.List;
+
+/**
+ * 客户提供给商户的相关服务
+ */
+public interface CustomerToMerchantService {
+    /**
+     * 按天统计某站点收入
+     * @param queryParam
+     * @return
+     */
+    ProjectIncomeInfo queryProjectIncome(IncomeQueryParam queryParam);
+
+    /**
+     * 统计某站点某段时间充电收入列表
+     * @param queryParam
+     * @return
+     */
+    PageData<ChargingIncomeInfo> queryProjectChargingIncome(IncomePageQueryParam queryParam);
+
+    /**
+     * 统计某站点某天ic卡充值收入列表
+     * @param queryParam
+     * @return
+     */
+    PageData<IcCardIncomeInfo> queryProjectIcCardIncome(IncomePageQueryParam queryParam);
+
+    /**
+     * 商户账户统计收入曲线
+     * @param queryParam
+     * @return
+     */
+    IncomeCurveInfo queryIncomeCurve(IncomeQueryParam queryParam);
+
+    /**
+     * 查询物业收入列表
+     * @param queryParam
+     * @return
+     */
+    List<PropertyIncomeInfo> queryPropertyIncomeInfo(IncomeQueryParam queryParam);
+
+    /**
+     * 查询站点收入列表
+     * @param queryParam
+     * @return
+     */
+    List<ProjectIncomeListInfo> queryProjectIncomeInfo(IncomeQueryParam queryParam);
+
+    /**
+     * 统计某站点某天ic卡充值收入列表
+     * @param queryParam
+     * @return
+     */
+    PageData<UseDetailListInfo> queryUseDetailList(IncomePageQueryParam queryParam);
+
+    /**
+     * 首页统计商户本日数据
+     * @param merchantGuid
+     * @return
+     */
+    TodayCustomerInfo queryTodayCount(String merchantGuid);
+
+    DeviceUseDetailedVo queryDeviceUseDetailed(DeviceUseDetailedVo deviceUseDetailed);
+
+    // 根据ids，批量查询
+    List<DeviceLogInfo> batchQueryByIds(List<Object> ids);
+
+     CustomerBaseInfo queryByCustomerGuid(String customerGuid);
+
+    List<DeviceLogInfo> queryCurve( String chargingPlieGuid,  String chargingGuid);
+
+    /**
+     * 查询ic卡充值记录
+     * @param param
+     * @return
+     */
+    PageData<CustomerPayCardInfo> queryICCardPayList(IcCardCustomerParam param);
+
+    /**
+     * 查询ic卡使用记录
+     * @param param
+     * @return
+     */
+    PageData<IcCardUseDetailedVo> queryICCardUseList(IcCardCustomerParam param);
+
+    ChargeCustomerInfoDetailInfo customerInfoDetail( String customerGuid);
+
+    public PageData useRecordList(UseRecordListDto useRecordListDto);
+
+    public PageData chargeRecordList(ChargeRecordListDto chargeRecordListDto);
+
+    //查询设备信号质量曲线
+    SignalCurveInfo querySignalCurve(String commNo,String signalDate,Integer dataType);
+
+    List<HeartDto> queryHeartBychargingGuid(ChargerDeviceQueryVo queryVo);
+
+    public List<HeartDto> queryHeartList(String chargingPlieGuid);
+
+    PageData customerInfoList(CustomerInfoListDto customerInfoListDto);
+
+    //根据chargingGuid查询使用记录
+    DeviceUseDetailedVo queryChargingRecordByChargingGuid(String chargingGuid);
+}

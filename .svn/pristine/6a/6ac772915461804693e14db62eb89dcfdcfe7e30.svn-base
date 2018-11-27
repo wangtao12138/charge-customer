@@ -1,0 +1,200 @@
+package cn.com.cdboost.charge.customer.vo.info;
+
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
+
+@Getter
+@Setter
+public class DeviceUseDetailedVo implements Serializable {
+    private static final long serialVersionUID = 2289957596265307232L;
+    /**
+     * 标识id
+     */
+    private Integer id;
+
+    /**
+     * 项目标识
+     */
+    private String projectGuid;
+
+    /**
+     * 商户标识
+     */
+    private String merchantGuid;
+
+    /**
+     * 客户唯一标识
+     */
+    private String customerGuid;
+
+    private String chargingPlieGuid;
+
+    /**
+     * 同充值方案表一样，充值类别 1-临时充值  2-包月充值 3-一次充满 4-余额活动充值
+     */
+    private Integer payCategory;
+
+    /**
+     * 1-按时充电 2-按电量充电 3-充满断电
+     */
+    private Integer chargingWay;
+
+    /**
+     * 0 - 不限制 其他值标识充电时长，单位小时
+     */
+    private Integer chargingTime;
+
+    /**
+     * 应充电电量 0-不限制 其他为电量
+     */
+    private Integer chargingPower;
+
+    /**
+     * 充电情况
+     */
+    private BigDecimal chargingPercent;
+
+    /**
+     * 开始充电时间
+     */
+    private Date startTime;
+
+    /**
+     * 结束充电时间
+     */
+    private Date endTime;
+
+    /**
+     * 充电结束方式 0 - 自动 1 -手动
+     */
+    private Integer endMethod;
+
+    /**
+     * 实际充电时长 单位(分钟)
+     */
+    private Integer useTime;
+
+    /**
+     * 实际用电量
+     */
+    private BigDecimal usePower;
+
+    /**
+     * 退费金额
+     */
+    private BigDecimal refundMoney;
+
+    /**
+     * 充电方案标识
+     */
+    private String schemeGuid;
+
+    /**
+     * 实际电价
+     */
+    private BigDecimal realPrice;
+
+    /**
+     * 结算电价
+     */
+    private BigDecimal settlementPrice;
+
+    /**
+     * 实际消费
+     */
+    private BigDecimal consumptionMoney;
+
+    /**
+     * 充电扣除费用
+     */
+    private BigDecimal deductMoney;
+
+    /**
+     * 月卡充电时，扣除次数
+     */
+    private Integer deductCnt;
+
+    /**
+     * 实际电费
+     */
+    private BigDecimal realPowerMoney;
+
+    /**
+     * 盈利费用
+     */
+    private BigDecimal profitable;
+
+    /**
+     * 当前状态 0-正在充电 1-已完成充电
+     */
+    private Integer state;
+
+    /**
+     * 充电记录唯一标识
+     */
+    private String chargingGuid;
+
+    /**
+     * 充电最大时长
+     */
+    private Integer chargingMaxTime;
+
+    /**
+     * 本次充电后剩余次数，包月用户有效
+     */
+    private Integer afterRemainCnt;
+
+    /**
+     * 本次充电后剩余金额
+     */
+    private BigDecimal afterRemainAmount;
+
+    /**
+     * 设备上报记录日志表主键
+     */
+    private Integer devLogId;
+
+    /**
+     * 开启方式 1-微信 2-支付宝 3-IC卡
+     */
+    private Integer openMeans;
+
+    /**
+     * 开启编号根据开启方式对应编号
+     */
+    private String openNo;
+
+    /**
+     * 最大电流
+     */
+    private BigDecimal maxCurrent;
+
+    /**
+     * 最大功率
+     */
+    private BigDecimal maxPower;
+
+    /**
+     * 用户状态 1 正常 0 禁用
+     */
+    private Integer customerState;
+
+    /**
+     * ic卡编号
+     */
+    private String cardId;
+
+    /**
+     * 创建时间
+     */
+    private Date createTime;
+
+    /**
+     * 物业标识
+     */
+    private String propertyGuid;
+}

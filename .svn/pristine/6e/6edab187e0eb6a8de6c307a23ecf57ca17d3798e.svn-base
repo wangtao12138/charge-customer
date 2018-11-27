@@ -1,0 +1,14 @@
+package cn.com.cdboost.charge.customer.dao;
+
+import cn.com.cdboost.charge.customer.common.CommonMapper;
+import cn.com.cdboost.charge.customer.model.CustomerPay;
+import cn.com.cdboost.charge.customer.vo.info.ChargeRecordListDto;
+import cn.com.cdboost.charge.customer.vo.info.ChargeRecordListInfo;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+
+public interface CustomerPayMapper extends CommonMapper<CustomerPay> {
+
+    List<ChargeRecordListInfo> chargeRecordList(@Param("chargeRecordListDto") ChargeRecordListDto chargeRecordListDto);
+}

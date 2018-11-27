@@ -1,0 +1,43 @@
+package cn.com.cdboost.charge.customer.vo.param;
+
+import cn.com.cdboost.charge.base.vo.PageQueryParam;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
+import java.util.List;
+
+@Setter
+@Getter
+public class IncomePageQueryParam extends PageQueryParam implements Serializable {
+    private static final long serialVersionUID = 5474407085383951832L;
+
+    /**
+     * 站点guid
+     */
+    private String projectGuid;
+    /**
+     * 站点名称
+     */
+    private String projectName;
+    /**
+     * 站点guid集合
+     */
+    private List<String> projectGuids;
+    /**
+     * 商户guid
+     */
+    private String merchantGuid;
+    /**
+     * 物业guid
+     */
+    private String propertyGuid;
+    /**
+     * 开始时间
+     */
+    private String beginTime;
+    /**
+     * 结束时间
+     */
+    private String endTime;
+}

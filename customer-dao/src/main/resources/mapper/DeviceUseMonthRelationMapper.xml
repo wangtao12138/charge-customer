@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.cdboost.charge.customer.dao.DeviceUseMonthRelationMapper">
+  <resultMap id="BaseResultMap" type="cn.com.cdboost.charge.customer.model.DeviceUseMonthRelation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="charging_guid" jdbcType="CHAR" property="chargingGuid" />
+    <result column="charge_type" jdbcType="INTEGER" property="chargeType" />
+    <result column="account_guid" jdbcType="CHAR" property="accountGuid" />
+    <result column="charge_cnt" jdbcType="INTEGER" property="chargeCnt" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="sign_guid" jdbcType="CHAR" property="signGuid" />
+  </resultMap>
+</mapper>

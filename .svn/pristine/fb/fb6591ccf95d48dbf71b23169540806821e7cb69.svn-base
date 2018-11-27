@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.cdboost.charge.customer.dao.CustomerPayCardMapper">
+  <resultMap id="BaseResultMap" type="cn.com.cdboost.charge.customer.model.CustomerPayCard">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="customer_guid" jdbcType="VARCHAR" property="customerGuid" />
+    <result column="project_guid" jdbcType="CHAR" property="projectGuid" />
+    <result column="merchant_guid" jdbcType="VARCHAR" property="merchantGuid" />
+    <result column="property_guid" jdbcType="VARCHAR" property="propertyGuid" />
+    <result column="card_id" jdbcType="VARCHAR" property="cardId" />
+    <result column="pay_money" jdbcType="DECIMAL" property="payMoney" />
+    <result column="after_remain_amount" jdbcType="DECIMAL" property="afterRemainAmount" />
+    <result column="serial_num" jdbcType="VARCHAR" property="serialNum" />
+    <result column="pay_flag" jdbcType="VARCHAR" property="payFlag" />
+    <result column="pay_way" jdbcType="INTEGER" property="payWay" />
+    <result column="pay_state" jdbcType="INTEGER" property="payState" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+</mapper>

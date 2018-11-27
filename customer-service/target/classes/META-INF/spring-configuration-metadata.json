@@ -1,0 +1,18 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "cn.com.cdboost.charge.customer.config.SystemConfig",
+      "name": "server",
+      "type": "cn.com.cdboost.charge.customer.config.SystemConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "cn.com.cdboost.charge.customer.config.SystemConfig",
+      "name": "server.domain",
+      "description": "服务器域名",
+      "type": "java.lang.String"
+    }
+  ]
+}

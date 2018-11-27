@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.cdboost.charge.customer.dao.CustomerPayMapper">
+  <resultMap id="BaseResultMap" type="cn.com.cdboost.charge.customer.model.CustomerPay">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="customer_guid" jdbcType="VARCHAR" property="customerGuid" />
+    <result column="webchar_no" jdbcType="VARCHAR" property="webcharNo" />
+    <result column="scheme_guid" jdbcType="VARCHAR" property="schemeGuid" />
+    <result column="pay_category" jdbcType="INTEGER" property="payCategory" />
+    <result column="num_months" jdbcType="INTEGER" property="numMonths" />
+    <result column="expire_time" jdbcType="TIMESTAMP" property="expireTime" />
+    <result column="pay_money" jdbcType="DECIMAL" property="payMoney" />
+    <result column="account_charge_money" jdbcType="DECIMAL" property="accountChargeMoney" />
+    <result column="account_deduct_money" jdbcType="DECIMAL" property="accountDeductMoney" />
+    <result column="buy_cnt" jdbcType="INTEGER" property="buyCnt" />
+    <result column="charging_time" jdbcType="INTEGER" property="chargingTime" />
+    <result column="serial_num" jdbcType="VARCHAR" property="serialNum" />
+    <result column="pay_flag" jdbcType="VARCHAR" property="payFlag" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="pay_state" jdbcType="INTEGER" property="payState" />
+    <result column="after_remain_amount" jdbcType="DECIMAL" property="afterRemainAmount" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="pay_way" jdbcType="INTEGER" property="payWay" />
+    <result column="card_id" jdbcType="VARCHAR" property="cardId" />
+  </resultMap>
+
+</mapper>

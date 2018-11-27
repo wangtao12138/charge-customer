@@ -1,0 +1,358 @@
+package cn.com.cdboost.charge.customer.model;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
+
+@Table(name = "cp_d_device_log")
+public class DeviceLog implements Serializable {
+    /**
+     * 标识id
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    /**
+     * 充电桩唯一标识
+     */
+    @Column(name = "charging_plie_guid")
+    private String chargingPlieGuid;
+
+    /**
+     * 充电桩端口号（0-9、a-f 16个端口）
+     */
+    private String port;
+
+    /**
+     * 事件code码（0正常，1告警，-1充电结束）
+     */
+    @Column(name = "event_code")
+    private Integer eventCode;
+
+    /**
+     * 事件内容
+     */
+    @Column(name = "event_content")
+    private String eventContent;
+
+    /**
+     * 短信发送的事件内容
+     */
+    @Column(name = "sms_content")
+    private String smsContent;
+
+    /**
+     * 电流
+     */
+    private BigDecimal current;
+
+    /**
+     * 电压
+     */
+    private BigDecimal voltage;
+
+    /**
+     * 功率
+     */
+    private BigDecimal power;
+
+    /**
+     * 电量
+     */
+    @Column(name = "active_total")
+    private BigDecimal activeTotal;
+
+    /**
+     * 剩余时长
+     */
+    @Column(name = "remain_time")
+    private BigDecimal remainTime;
+
+    /**
+     * 创建时间
+     */
+    @Column(name = "create_time")
+    private Date createTime;
+
+    /**
+     * 充电情况
+     */
+    @Column(name = "charging_percent")
+    private BigDecimal chargingPercent;
+
+    /**
+     * 充电记录唯一标识
+     */
+    @Column(name = "charging_guid")
+    private String chargingGuid;
+
+    /**
+     * 短信发送状态（0未发送，1已发送）
+     */
+    @Column(name = "sms_status")
+    private Integer smsStatus;
+
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * 获取标识id
+     *
+     * @return id - 标识id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * 设置标识id
+     *
+     * @param id 标识id
+     */
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    /**
+     * 获取充电桩唯一标识
+     *
+     * @return charging_plie_guid - 充电桩唯一标识
+     */
+    public String getChargingPlieGuid() {
+        return chargingPlieGuid;
+    }
+
+    /**
+     * 设置充电桩唯一标识
+     *
+     * @param chargingPlieGuid 充电桩唯一标识
+     */
+    public void setChargingPlieGuid(String chargingPlieGuid) {
+        this.chargingPlieGuid = chargingPlieGuid;
+    }
+
+    /**
+     * 获取充电桩端口号（0-9、a-f 16个端口）
+     *
+     * @return port - 充电桩端口号（0-9、a-f 16个端口）
+     */
+    public String getPort() {
+        return port;
+    }
+
+    /**
+     * 设置充电桩端口号（0-9、a-f 16个端口）
+     *
+     * @param port 充电桩端口号（0-9、a-f 16个端口）
+     */
+    public void setPort(String port) {
+        this.port = port;
+    }
+
+    /**
+     * 获取事件code码（0正常，1告警，-1充电结束）
+     *
+     * @return event_code - 事件code码（0正常，1告警，-1充电结束）
+     */
+    public Integer getEventCode() {
+        return eventCode;
+    }
+
+    /**
+     * 设置事件code码（0正常，1告警，-1充电结束）
+     *
+     * @param eventCode 事件code码（0正常，1告警，-1充电结束）
+     */
+    public void setEventCode(Integer eventCode) {
+        this.eventCode = eventCode;
+    }
+
+    /**
+     * 获取事件内容
+     *
+     * @return event_content - 事件内容
+     */
+    public String getEventContent() {
+        return eventContent;
+    }
+
+    /**
+     * 设置事件内容
+     *
+     * @param eventContent 事件内容
+     */
+    public void setEventContent(String eventContent) {
+        this.eventContent = eventContent;
+    }
+
+    /**
+     * 获取电流
+     *
+     * @return current - 电流
+     */
+    public BigDecimal getCurrent() {
+        return current;
+    }
+
+    /**
+     * 设置电流
+     *
+     * @param current 电流
+     */
+    public void setCurrent(BigDecimal current) {
+        this.current = current;
+    }
+
+    /**
+     * 获取电压
+     *
+     * @return voltage - 电压
+     */
+    public BigDecimal getVoltage() {
+        return voltage;
+    }
+
+    /**
+     * 设置电压
+     *
+     * @param voltage 电压
+     */
+    public void setVoltage(BigDecimal voltage) {
+        this.voltage = voltage;
+    }
+
+    /**
+     * 获取功率
+     *
+     * @return power - 功率
+     */
+    public BigDecimal getPower() {
+        return power;
+    }
+
+    /**
+     * 设置功率
+     *
+     * @param power 功率
+     */
+    public void setPower(BigDecimal power) {
+        this.power = power;
+    }
+
+    /**
+     * 获取电量
+     *
+     * @return active_total - 电量
+     */
+    public BigDecimal getActiveTotal() {
+        return activeTotal;
+    }
+
+    /**
+     * 设置电量
+     *
+     * @param activeTotal 电量
+     */
+    public void setActiveTotal(BigDecimal activeTotal) {
+        this.activeTotal = activeTotal;
+    }
+
+    /**
+     * 获取剩余时长
+     *
+     * @return remain_time - 剩余时长
+     */
+    public BigDecimal getRemainTime() {
+        return remainTime;
+    }
+
+    /**
+     * 设置剩余时长
+     *
+     * @param remainTime 剩余时长
+     */
+    public void setRemainTime(BigDecimal remainTime) {
+        this.remainTime = remainTime;
+    }
+
+    /**
+     * 获取创建时间
+     *
+     * @return create_time - 创建时间
+     */
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    /**
+     * 设置创建时间
+     *
+     * @param createTime 创建时间
+     */
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    /**
+     * 获取充电情况
+     *
+     * @return charging_percent - 充电情况
+     */
+    public BigDecimal getChargingPercent() {
+        return chargingPercent;
+    }
+
+    /**
+     * 设置充电情况
+     *
+     * @param chargingPercent 充电情况
+     */
+    public void setChargingPercent(BigDecimal chargingPercent) {
+        this.chargingPercent = chargingPercent;
+    }
+
+    /**
+     * 获取充电记录唯一标识
+     *
+     * @return charging_guid - 充电记录唯一标识
+     */
+    public String getChargingGuid() {
+        return chargingGuid;
+    }
+
+    /**
+     * 设置充电记录唯一标识
+     *
+     * @param chargingGuid 充电记录唯一标识
+     */
+    public void setChargingGuid(String chargingGuid) {
+        this.chargingGuid = chargingGuid;
+    }
+
+    /**
+     * 获取短信发送状态（0未发送，1已发送）
+     *
+     * @return sms_status - 短信发送状态（0未发送，1已发送）
+     */
+    public Integer getSmsStatus() {
+        return smsStatus;
+    }
+
+    /**
+     * 设置短信发送状态（0未发送，1已发送）
+     *
+     * @param smsStatus 短信发送状态（0未发送，1已发送）
+     */
+    public void setSmsStatus(Integer smsStatus) {
+        this.smsStatus = smsStatus;
+    }
+
+    public String getSmsContent() {
+        return smsContent;
+    }
+
+    public void setSmsContent(String smsContent) {
+        this.smsContent = smsContent;
+    }
+}

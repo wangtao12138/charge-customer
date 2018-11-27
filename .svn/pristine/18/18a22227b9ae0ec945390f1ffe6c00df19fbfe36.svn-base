@@ -1,0 +1,14 @@
+package cn.com.cdboost.charge.customer.service.impl;
+
+import cn.com.cdboost.charge.customer.common.BaseServiceImpl;
+import cn.com.cdboost.charge.customer.model.DeviceUsePayRelation;
+import cn.com.cdboost.charge.customer.service.IDeviceUsePayRelationService;
+import org.springframework.stereotype.Service;
+
+/**
+ * 开电记录与开电充值订单关联表单表接口实现类
+ */
+@Service
+public class IDeviceUsePayRelationServiceImpl extends BaseServiceImpl<DeviceUsePayRelation> implements IDeviceUsePayRelationService {
+
+}

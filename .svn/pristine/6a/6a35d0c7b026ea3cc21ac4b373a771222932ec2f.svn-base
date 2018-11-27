@@ -1,0 +1,14 @@
+package cn.com.cdboost.charge.customer.service.impl;
+
+import cn.com.cdboost.charge.customer.common.BaseServiceImpl;
+import cn.com.cdboost.charge.customer.model.CustomerRefund;
+import cn.com.cdboost.charge.customer.service.ICustomerRefundService;
+import org.springframework.stereotype.Service;
+
+/**
+ * 交易订单退款记录表单表接口实现类
+ */
+@Service
+public class ICustomerRefundServiceImpl extends BaseServiceImpl<CustomerRefund> implements ICustomerRefundService {
+
+}

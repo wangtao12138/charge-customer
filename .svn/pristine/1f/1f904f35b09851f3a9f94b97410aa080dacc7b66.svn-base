@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!--根节点 -->
+<generatorConfiguration>
+    <!-- 指定外部的属性元素 -->
+    <!--<properties resource="application.yml"/>-->
+
+    <!-- 必须 指定生成一组对象的环境 -->
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <!--分隔符 -->
+        <property name="autoDelimitKeywords" value="true"/>
+        <!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+
+        <!-- beginningDelimiter和endingDelimiter：指明数据库的用于标记数据库对象名的符号，比如ORACLE就是双引号，MYSQL默认是`反引号； -->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!-- 通用mapper插件 -->
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <!-- 此处的 MyMapper注意一定不能被扫描到-->
+            <!--<property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>-->
+            <property name="mappers" value="cn.com.cdboost.charge.customer.common.CommonMapper"/>
+        </plugin>
+
+        <!-- 序列化插件 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+
+        <!-- 注释 规则-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="false"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://10.10.1.150:3306/cloud_charging_customer?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia%2FShanghai&amp;useSSL=true&amp;allowMultiQueries=true&amp;nullNamePatternMatchesAll=true"
+                        userId="root"
+                        password="boost@mysql.150">
+        </jdbcConnection>
+
+        <!-- 是否强制DECIMAL和NUMERIC类型的字段转换为Java类型的java.math.BigDecimal -->
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="true" />
+        </javaTypeResolver>
+
+        <!-- for MyBatis3 / MyBatis3Simple
+            是否创建一个不可变的类，如果为true，
+            那么MBG会创建一个没有setter方法的类，取而代之的是类似constructorBased的类
+         -->
+        <!--<property name="immutable" value="false"/>-->
+
+        <!-- 实体类 -->
+        <javaModelGenerator targetPackage="${targetModelPackage}" targetProject="${targetJavaProject}" />
+
+        <!-- Mapper接口对应的XML文件 -->
+        <sqlMapGenerator targetPackage="${targetXMLPackage}"  targetProject="${targetResourcesProject}" />
+
+        <!-- 通用Mapper接口 -->
+        <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}" type="XMLMAPPER" />
+
+        <!--<table tableName="%">-->
+            <!--&lt;!&ndash;mysql 配置&ndash;&gt;-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" />-->
+            <!--&lt;!&ndash;oracle 配置&ndash;&gt;-->
+            <!--&lt;!&ndash;<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>&ndash;&gt;-->
+        <!--</table>-->
+
+        <!--<table tableName="cp_d_customer_info" domainObjectName="CustomerInfo">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="cp_d_customer_pay" domainObjectName="CustomerPay">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="cp_d_device_use_detailed" domainObjectName="DeviceUseDetailed">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="cp_d_merchant_cst_relation" domainObjectName="MerchantCstRelation">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="cp_d_device_log" domainObjectName="DeviceLog">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>-->
+
+        <!--<table tableName="cp_d_device_signal" domainObjectName="DeviceSignal">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="cp_d_device_use_pay_relation" domainObjectName="DeviceUsePayRelation">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+
+        <table tableName="cp_d_device_use_month_relation" domainObjectName="DeviceUseMonthRelation">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+        <!--<table tableName="cp_d_customer_refund" domainObjectName="CustomerRefund">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="cp_d_merchant_wx_config" domainObjectName="MerchantWxConfig">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+
+        <!--<table tableName="cp_d_merchant_zfb_config" domainObjectName="MerchantZfbConfig">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+
+    </context>
+</generatorConfiguration>

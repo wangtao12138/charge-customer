@@ -1,0 +1,371 @@
+package cn.com.cdboost.charge.customer.model;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
+
+@Table(name = "cp_d_customer_refund")
+public class CustomerRefund implements Serializable {
+    /**
+     * 主键
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    /**
+     * 用户唯一标识
+     */
+    @Column(name = "customer_guid")
+    private String customerGuid;
+
+    /**
+     * 退款类型（1-微信，2-支付宝）
+     */
+    @Column(name = "refund_type")
+    private Integer refundType;
+
+    /**
+     * 充电唯一标识
+     */
+    @Column(name = "charging_guid")
+    private String chargingGuid;
+
+    /**
+     * 关联的交易订单号
+     */
+    @Column(name = "trade_no")
+    private String tradeNo;
+
+    /**
+     * 退款申请单号
+     */
+    @Column(name = "refund_no")
+    private String refundNo;
+
+    /**
+     * 退款金额
+     */
+    @Column(name = "refund_amount")
+    private BigDecimal refundAmount;
+
+    /**
+     * 退款类别（0-系统自动退款，1-手动退款）
+     */
+    @Column(name = "refund_category")
+    private Integer refundCategory;
+
+    /**
+     * 退款状态（0-待退款，1-退款成功，2-退款失败）
+     */
+    @Column(name = "refund_state")
+    private Integer refundState;
+
+    /**
+     * 退款失败编码
+     */
+    @Column(name = "error_code")
+    private String errorCode;
+
+    /**
+     * 退款失败描述
+     */
+    @Column(name = "error_desc")
+    private String errorDesc;
+
+    /**
+     * 退款描述
+     */
+    private String remark;
+
+    /**
+     * 创建时间
+     */
+    @Column(name = "create_time")
+    private Date createTime;
+
+    /**
+     * 退款操作用户id（0-系统自动退款）
+     */
+    @Column(name = "operate_user_id")
+    private Integer operateUserId;
+
+    /**
+     * 修改时间
+     */
+    @Column(name = "update_time")
+    private Date updateTime;
+
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * 获取主键
+     *
+     * @return id - 主键
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * 设置主键
+     *
+     * @param id 主键
+     */
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    /**
+     * 获取用户唯一标识
+     *
+     * @return customer_guid - 用户唯一标识
+     */
+    public String getCustomerGuid() {
+        return customerGuid;
+    }
+
+    /**
+     * 设置用户唯一标识
+     *
+     * @param customerGuid 用户唯一标识
+     */
+    public void setCustomerGuid(String customerGuid) {
+        this.customerGuid = customerGuid;
+    }
+
+    /**
+     * 获取退款类型（1-微信，2-支付宝）
+     *
+     * @return refund_type - 退款类型（1-微信，2-支付宝）
+     */
+    public Integer getRefundType() {
+        return refundType;
+    }
+
+    /**
+     * 设置退款类型（1-微信，2-支付宝）
+     *
+     * @param refundType 退款类型（1-微信，2-支付宝）
+     */
+    public void setRefundType(Integer refundType) {
+        this.refundType = refundType;
+    }
+
+    /**
+     * 获取充电唯一标识
+     *
+     * @return charging_guid - 充电唯一标识
+     */
+    public String getChargingGuid() {
+        return chargingGuid;
+    }
+
+    /**
+     * 设置充电唯一标识
+     *
+     * @param chargingGuid 充电唯一标识
+     */
+    public void setChargingGuid(String chargingGuid) {
+        this.chargingGuid = chargingGuid;
+    }
+
+    /**
+     * 获取关联的交易订单号
+     *
+     * @return trade_no - 关联的交易订单号
+     */
+    public String getTradeNo() {
+        return tradeNo;
+    }
+
+    /**
+     * 设置关联的交易订单号
+     *
+     * @param tradeNo 关联的交易订单号
+     */
+    public void setTradeNo(String tradeNo) {
+        this.tradeNo = tradeNo;
+    }
+
+    /**
+     * 获取退款申请单号
+     *
+     * @return refund_no - 退款申请单号
+     */
+    public String getRefundNo() {
+        return refundNo;
+    }
+
+    /**
+     * 设置退款申请单号
+     *
+     * @param refundNo 退款申请单号
+     */
+    public void setRefundNo(String refundNo) {
+        this.refundNo = refundNo;
+    }
+
+    /**
+     * 获取退款金额
+     *
+     * @return refund_amount - 退款金额
+     */
+    public BigDecimal getRefundAmount() {
+        return refundAmount;
+    }
+
+    /**
+     * 设置退款金额
+     *
+     * @param refundAmount 退款金额
+     */
+    public void setRefundAmount(BigDecimal refundAmount) {
+        this.refundAmount = refundAmount;
+    }
+
+    /**
+     * 获取退款类别（0-系统自动退款，1-手动退款）
+     *
+     * @return refund_category - 退款类别（0-系统自动退款，1-手动退款）
+     */
+    public Integer getRefundCategory() {
+        return refundCategory;
+    }
+
+    /**
+     * 设置退款类别（0-系统自动退款，1-手动退款）
+     *
+     * @param refundCategory 退款类别（0-系统自动退款，1-手动退款）
+     */
+    public void setRefundCategory(Integer refundCategory) {
+        this.refundCategory = refundCategory;
+    }
+
+    /**
+     * 获取退款状态（0-待退款，1-退款成功，2-退款失败）
+     *
+     * @return refund_state - 退款状态（0-待退款，1-退款成功，2-退款失败）
+     */
+    public Integer getRefundState() {
+        return refundState;
+    }
+
+    /**
+     * 设置退款状态（0-待退款，1-退款成功，2-退款失败）
+     *
+     * @param refundState 退款状态（0-待退款，1-退款成功，2-退款失败）
+     */
+    public void setRefundState(Integer refundState) {
+        this.refundState = refundState;
+    }
+
+    /**
+     * 获取退款失败编码
+     *
+     * @return error_code - 退款失败编码
+     */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    /**
+     * 设置退款失败编码
+     *
+     * @param errorCode 退款失败编码
+     */
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    /**
+     * 获取退款失败描述
+     *
+     * @return error_desc - 退款失败描述
+     */
+    public String getErrorDesc() {
+        return errorDesc;
+    }
+
+    /**
+     * 设置退款失败描述
+     *
+     * @param errorDesc 退款失败描述
+     */
+    public void setErrorDesc(String errorDesc) {
+        this.errorDesc = errorDesc;
+    }
+
+    /**
+     * 获取退款描述
+     *
+     * @return remark - 退款描述
+     */
+    public String getRemark() {
+        return remark;
+    }
+
+    /**
+     * 设置退款描述
+     *
+     * @param remark 退款描述
+     */
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    /**
+     * 获取创建时间
+     *
+     * @return create_time - 创建时间
+     */
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    /**
+     * 设置创建时间
+     *
+     * @param createTime 创建时间
+     */
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    /**
+     * 获取退款操作用户id（0-系统自动退款）
+     *
+     * @return operate_user_id - 退款操作用户id（0-系统自动退款）
+     */
+    public Integer getOperateUserId() {
+        return operateUserId;
+    }
+
+    /**
+     * 设置退款操作用户id（0-系统自动退款）
+     *
+     * @param operateUserId 退款操作用户id（0-系统自动退款）
+     */
+    public void setOperateUserId(Integer operateUserId) {
+        this.operateUserId = operateUserId;
+    }
+
+    /**
+     * 获取修改时间
+     *
+     * @return update_time - 修改时间
+     */
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    /**
+     * 设置修改时间
+     *
+     * @param updateTime 修改时间
+     */
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+}

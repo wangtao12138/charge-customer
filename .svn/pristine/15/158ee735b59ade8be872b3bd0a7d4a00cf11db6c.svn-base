@@ -1,0 +1,14 @@
+package cn.com.cdboost.charge.customer.service.impl;
+
+import cn.com.cdboost.charge.customer.common.BaseServiceImpl;
+import cn.com.cdboost.charge.customer.model.MerchantZfbConfig;
+import cn.com.cdboost.charge.customer.service.IMerchantZfbConfigService;
+import org.springframework.stereotype.Service;
+
+/**
+ * 系统商户与支付宝相关信息配置表单表接口实现类
+ */
+@Service
+public class IMerchantZfbConfigServiceImpl extends BaseServiceImpl<MerchantZfbConfig> implements IMerchantZfbConfigService {
+
+}

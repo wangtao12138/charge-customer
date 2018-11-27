@@ -1,0 +1,172 @@
+package cn.com.cdboost.charge.customer.service.impl;
+
+import cn.com.cdboost.charge.base.vo.PageData;
+import cn.com.cdboost.charge.customer.common.BaseServiceImpl;
+import cn.com.cdboost.charge.customer.constant.CustomerConstant;
+import cn.com.cdboost.charge.customer.dao.DeviceUseDetailedMapper;
+import cn.com.cdboost.charge.customer.model.DeviceUseDetailed;
+import cn.com.cdboost.charge.customer.service.IDeviceUseDetailedService;
+import cn.com.cdboost.charge.customer.vo.info.TodayCustomerInfo;
+import cn.com.cdboost.charge.customer.vo.param.ChargeOrderQueryParam;
+import cn.com.cdboost.charge.customer.vo.param.IncomePageQueryParam;
+import cn.com.cdboost.charge.customer.vo.param.IncomeQueryParam;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+import tk.mybatis.mapper.entity.Condition;
+import tk.mybatis.mapper.entity.Example;
+
+import javax.annotation.Resource;
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * 充电桩使用记录单表接口实现
+ */
+@Service
+public class IDeviceUseDetailedServiceImpl extends BaseServiceImpl<DeviceUseDetailed> implements IDeviceUseDetailedService {
+
+    @Resource
+    private DeviceUseDetailedMapper deviceUseDetailedMapper;
+
+    @Override
+    public List<DeviceUseDetailed> queryChargeOrders(ChargeOrderQueryParam queryParam) {
+        DeviceUseDetailed param = new DeviceUseDetailed();
+        BeanUtils.copyProperties(queryParam,param);
+
+        // 分页
+        String sortName = queryParam.getSortName();
+        if (StringUtils.isBlank(sortName)) {
+            PageHelper.startPage(queryParam.getPageNumber(),queryParam.getPageSize());
+        } else {
+            String orderBy = sortName + queryParam.getSortOrder();
+            PageHelper.startPage(queryParam.getPageNumber(),queryParam.getPageSize(),orderBy);
+        }
+        return deviceUseDetailedMapper.select(param);
+    }
+
+    @Override
+    public DeviceUseDetailed queryChargingOrder(String customerGuid) {
+        Condition condition = new Condition(DeviceUseDetailed.class);
+        Example.Criteria criteria = condition.createCriteria();
+        criteria.andEqualTo("customerGuid",customerGuid);
+        criteria.andEqualTo("state",0);
+        criteria.andNotEqualTo("openMeans", CustomerConstant.OpenMeansConstant.ICCARD.getType());
+        List<DeviceUseDetailed> list = deviceUseDetailedMapper.selectByCondition(condition);
+        if (CollectionUtils.isEmpty(list)) {
+            return null;
+        }
+        DeviceUseDetailed useDetailed = list.get(0);
+        return useDetailed;
+    }
+
+    @Override
+    public DeviceUseDetailed queryChargeOrder(String chargingGuid) {
+        DeviceUseDetailed param = new DeviceUseDetailed();
+        param.setChargingGuid(chargingGuid);
+        return deviceUseDetailedMapper.selectOne(param);
+    }
+
+    @Override
+    public List<DeviceUseDetailed> queryUseDetail(IncomeQueryParam queryParam) {
+        Condition condition = new Condition(DeviceUseDetailed.class);
+        Example.Criteria criteria = condition.createCriteria();
+        if (!StringUtils.isEmpty(queryParam.getProjectGuid())) {
+            criteria.andEqualTo("projectGuid", queryParam.getProjectGuid());
+        }
+        if (!StringUtils.isEmpty(queryParam.getMerchantGuid())) {
+            criteria.andEqualTo("merchantGuid", queryParam.getMerchantGuid());
+        }
+        if (!StringUtils.isEmpty(queryParam.getPropertyGuid())) {
+            criteria.andEqualTo("propertyGuid", queryParam.getPropertyGuid());
+        }
+        if (!CollectionUtils.isEmpty(queryParam.getProjectGuids())){
+            criteria.andIn("projectGuid",queryParam.getProjectGuids());
+        }
+        if (!StringUtils.isEmpty(queryParam.getSchemeGuid())){
+            criteria.andEqualTo("schemeGuid",queryParam.getSchemeGuid());
+        }
+        criteria.andBetween("endTime",queryParam.getBeginTime(),queryParam.getEndTime());
+        return deviceUseDetailedMapper.selectByCondition(condition);
+    }
+
+    @Override
+    public PageData queryUseDetailPage(IncomePageQueryParam queryParam) {
+        PageData pageData = new PageData();
+        Condition condition = new Condition(DeviceUseDetailed.class);
+        Example.Criteria criteria = condition.createCriteria();
+        if (!StringUtils.isEmpty(queryParam.getProjectGuid())) {
+            criteria.andEqualTo("projectGuid", queryParam.getProjectGuid());
+        }
+        criteria.andBetween("endTime",queryParam.getBeginTime(),queryParam.getEndTime());
+        PageHelper.startPage(queryParam.getPageNumber(),queryParam.getPageSize(),"id desc");
+        List<DeviceUseDetailed> deviceUseDetaileds = deviceUseDetailedMapper.selectByCondition(condition);
+        // 设置分页总条数
+        PageInfo<DeviceUseDetailed> pageInfo = new PageInfo<>(deviceUseDetaileds);
+        pageData.setList(deviceUseDetaileds);
+        pageData.setTotal(pageInfo.getTotal());
+        return pageData;
+    }
+
+    @Override
+    public PageData<DeviceUseDetailed> queryChargeHistory(String customerGuid, Integer pageNumber, Integer pageSize) {
+        Condition condition = new Condition(DeviceUseDetailed.class);
+        Example.Criteria criteria = condition.createCriteria();
+        criteria.andEqualTo("customerGuid",customerGuid);
+        criteria.andEqualTo("state", CustomerConstant.DeviceUsedRecordState.FINISH.getState());
+        criteria.andNotEqualTo("openMeans",CustomerConstant.OpenMeansConstant.ICCARD.getType());
+        PageHelper.startPage(pageNumber,pageSize,"id desc");
+        List<DeviceUseDetailed> list = deviceUseDetailedMapper.selectByCondition(condition);
+        PageInfo pageInfo = new PageInfo(list);
+
+        PageData<DeviceUseDetailed> pageData = new PageData<>();
+        pageData.setList(list);
+        pageData.setTotal(pageInfo.getTotal());
+        return pageData;
+    }
+
+    @Override
+    public DeviceUseDetailed queryLatestChargeOrder(String customerGuid) {
+        Condition condition = new Condition(DeviceUseDetailed.class);
+        Example.Criteria criteria = condition.createCriteria();
+        criteria.andEqualTo("customerGuid",customerGuid);
+        criteria.andEqualTo("state",CustomerConstant.DeviceUsedRecordState.FINISH.getState());
+        condition.setOrderByClause("id DESC limit 1");
+        List<DeviceUseDetailed> list = deviceUseDetailedMapper.selectByCondition(condition);
+        if (CollectionUtils.isEmpty(list)) {
+            return null;
+        }
+        DeviceUseDetailed useDetailed = list.get(0);
+        return useDetailed;
+    }
+
+    @Override
+    public List<DeviceUseDetailed> queryRecentNList(String cardId, Integer number) {
+        Condition condition = new Condition(DeviceUseDetailed.class);
+        Example.Criteria criteria = condition.createCriteria();
+        criteria.andEqualTo("openNo",cardId);
+        criteria.andEqualTo("state",CustomerConstant.DeviceUsedRecordState.FINISH.getState());
+        condition.setOrderByClause("end_time desc limit " + number);
+        return  deviceUseDetailedMapper.selectByCondition(condition);
+    }
+
+    @Override
+    public TodayCustomerInfo queryTodayCount(String merchantGuid, String beginTime, String endTime) {
+        TodayCustomerInfo info = new TodayCustomerInfo();
+        Condition condition = new Condition(DeviceUseDetailed.class);
+        Example.Criteria criteria = condition.createCriteria();
+        criteria.andEqualTo("merchantGuid",merchantGuid);
+        criteria.andBetween("endTime",beginTime,endTime);
+        List<DeviceUseDetailed> deviceUseDetaileds = deviceUseDetailedMapper.selectByCondition(condition);
+        BigDecimal usePower = BigDecimal.ZERO;
+        info.setChargingTimes(deviceUseDetaileds.size());
+        for (DeviceUseDetailed deviceUseDetailed : deviceUseDetaileds) {
+            usePower = usePower.add(deviceUseDetailed.getUsePower());
+        }
+        info.setUsePower(usePower);
+        return info;
+    }
+}

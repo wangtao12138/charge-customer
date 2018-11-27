@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.cdboost.charge.customer.dao.DeviceUsePayRelationMapper">
+  <resultMap id="BaseResultMap" type="cn.com.cdboost.charge.customer.model.DeviceUsePayRelation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="charging_guid" jdbcType="CHAR" property="chargingGuid" />
+    <result column="pay_flag" jdbcType="CHAR" property="payFlag" />
+    <result column="pay_money" jdbcType="DECIMAL" property="payMoney" />
+    <result column="refund_money" jdbcType="DECIMAL" property="refundMoney" />
+    <result column="refund_state" jdbcType="INTEGER" property="refundState" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="sign_guid" jdbcType="CHAR" property="signGuid" />
+  </resultMap>
+
+  <select id="queryCanRefundList" resultMap="BaseResultMap">
+    select r.* from em_d_charging_use_pay_relation r
+    INNER JOIN em_d_charging_pay p
+    ON r.pay_flag=p.pay_flag AND p.pay_state=1
+    WHERE r.charging_guid=#{chargingGuid} AND r.refund_state IN(0,1);
+  </select>
+
+  <select id="queryList4PayCancel" resultMap="BaseResultMap">
+    select r.* from em_d_charging_use_pay_relation r
+    INNER JOIN em_d_charging_pay p
+    ON r.pay_flag=p.pay_flag AND p.pay_state=1
+    WHERE r.charging_guid=#{chargingGuid} AND r.sign_guid=#{signGuid};
+  </select>
+</mapper>

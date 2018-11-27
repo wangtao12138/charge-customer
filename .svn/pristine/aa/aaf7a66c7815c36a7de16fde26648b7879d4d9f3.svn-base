@@ -1,0 +1,52 @@
+package cn.com.cdboost.charge.customer.vo.info;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+@Setter
+@Getter
+@ApiModel(value = "UseDetailListInfo",description = "使用记录返回对象")
+public class UseDetailListInfo implements Serializable{
+    private static final long serialVersionUID = -4761186147907308689L;
+
+    @ApiModelProperty(value = "实际充电时长 单位(分钟)")
+    private Integer useTime;
+
+    @ApiModelProperty(value = "充电桩编号")
+    private String deviceNo;
+
+    @ApiModelProperty(value = "充电桩端口号")
+    private String port;
+
+    @ApiModelProperty(value = "开始时间")
+    private String startTime;
+
+    @ApiModelProperty(value = "使用电量（度）")
+    private String usePower;
+
+    @ApiModelProperty(value = "充电金额(元)")
+    private String deductMoney;
+
+    @ApiModelProperty(value = "充电记录唯一标识")
+    private String chargingGuid;
+
+    /**
+     * 同充值方案表一样，充值类别 1-临时充值  2-包月充值 3-一次充满 4-余额活动充值
+     */
+    private Integer payCategory;
+
+    /**
+     * 当前状态 0-正在充电 1-已完成充电
+     */
+    private Integer state;
+
+    /**
+     * 盈利费用
+     */
+    private BigDecimal profitable;
+}

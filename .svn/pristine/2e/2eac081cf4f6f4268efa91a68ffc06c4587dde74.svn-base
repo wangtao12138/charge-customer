@@ -1,0 +1,25 @@
+# Druid Datasource配置
+spring:
+  datasource:
+    druid:
+#      db-type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://10.10.1.150:3306/cloud_charging_customer?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia%2FShanghai&useSSL=true&allowMultiQueries=true&nullNamePatternMatchesAll=true
+      username: root
+      password: boost@mysql.150
+
+dubbo:
+  registry:
+    id: appapi-registry
+    address: zookeeper://10.10.1.163:2181
+
+logging:
+  config: classpath:logback-spring.xml
+  # windows系统
+  # path: C:/logs/charge-customer
+  # linux系统
+  path: /data/logs/charge-customer
+
+# 系统自定义配置
+server:
+  domain: http://wxtest.cdboost.cn

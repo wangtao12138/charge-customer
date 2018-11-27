@@ -1,0 +1,297 @@
+package cn.com.cdboost.charge.customer.constant;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+/**
+ * 客户服务相关常量
+ */
+public class CustomerConstant {
+
+    /**
+     * 支付订单业务类型
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum PayOrderBusinessType{
+        CHARGE_PAY(1,"开电充值"),
+        RE_CHARGE_PAY(2,"续充充值"),
+        ACTIVITY_PAY(3,"活动充值"),
+        MONTH_CARD_PAY(4,"月卡充值"),
+        IC_CARD_PAY(5,"IC卡充值");
+
+        /**
+         * 类型
+         */
+        private Integer type;
+
+        /**
+         * 描述
+         */
+        private String desc;
+    }
+
+    /**
+     * 充电打开方式常量
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum OpenMeansConstant {
+        WECHAT(1,"微信"),ALIPAY(2,"支付宝"),ICCARD(3,"IC卡");
+
+        /**
+         * 类型
+         */
+        private Integer type;
+        /**
+         * 描述
+         */
+        private String desc;
+
+    }
+
+    /**
+     * 用户类型
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum  UserType{
+        USER_COMMON(1,"普通用户"),
+        USER_MONTH(2,"包月用户");
+
+        /**
+         * 状态
+         */
+        private Integer type;
+        /**
+         * 描述
+         */
+        private String typeDesc;
+    }
+
+    /**
+     * 支付场景
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum PayScene {
+        CHARGE_ELEC(0,"充电页面选择充电方案场景"),
+        MONTH_CHARGE(1,"月卡充值场景"),
+        ACTIVITY_CHARGE(2,"活动购买页给账户余额充值场景"),
+        ICCARD_CHARGE(3,"IC卡充值场景");
+
+        /**
+         * 类型
+         */
+        private Integer type;
+        /**
+         * 描述
+         */
+        private String desc;
+    }
+
+    /**
+     * 支付方式
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum PayWayConstant {
+        WECHAT(1,"微信支付"), ALIPAY(2,"支付宝支付"), CASH(3,"现金支付"),BALANCE(4,"余额支付");
+        /**
+         * 类型
+         */
+        private Integer type;
+        /**
+         * 描述
+         */
+        private String desc;
+
+        public static final String getDescByType(Integer type) {
+            for (PayWayConstant payWayConstant : PayWayConstant.values()) {
+                if (payWayConstant.getType().equals(type)) {
+                    return payWayConstant.getDesc();
+                }
+            }
+            return "";
+        }
+    }
+
+    /**
+     * 客户使用记录表充电状态
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum DeviceUsedRecordState {
+        FINISH(1,"充电结束"),CHARGING(0,"充电中");
+
+        /**
+         * 开电状态
+         */
+        private Integer state;
+
+        /**
+         * 描述
+         */
+        private String desc;
+    }
+
+    /**
+     * 充电扣减方式
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum ChargeDeductWay{
+        PAY_MONTH_CNT(1,"月卡次数扣减"),
+        PAY_USER_BALANCE(2,"账户余额扣减"),
+        IC_CARD_BALANCE(3,"IC卡余额扣减");
+
+        /**
+         * 状态
+         */
+        private Integer payWay;
+        /**
+         * 描述
+         */
+        private String payWayDesc;
+    }
+
+    /**
+     * 支付状态
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum PayState {
+
+        WAIT_PAY(0,"待支付"),PAY_SUCCESS(1,"支付成功");
+
+        /**
+         * 状态
+         */
+        private Integer state;
+        /**
+         * 描述
+         */
+        private String desc;
+    }
+
+    /**
+     * APP类型
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum AppType {
+        WECHAT(1,"微信"),ALIPAY(2,"支付宝");
+
+        /**
+         * 类型
+         */
+        private Integer type;
+        /**
+         * 描述
+         */
+        private String desc;
+    }
+
+    /**
+     * 是否认证
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum  IsAuthentication{
+        YES(1,"已认证"), NO(0,"未认证");
+
+        /**
+         * 状态
+         */
+        private Integer state;
+        /**
+         * 描述
+         */
+        private String desc;
+    }
+
+    /**
+     * 消息类型
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum MessageType{
+        MESSAGE_ALARM(1,"警告"),
+        MESSAGE_CHARGE_STOP(-1,"充电结束"),
+        MESSAGE_CHARGE_STOP_ERROR(-2,"异常结束"),
+        MESSAGE_LEVEL(0,"正常");
+        /**
+         * 状态
+         */
+        private Integer type;
+        /**
+         * 描述
+         */
+        private String desc;
+
+        public static String getDescByType(Integer type) {
+            for (MessageType messageType : MessageType.values()) {
+                if (messageType.getType().equals(type)) {
+                    return messageType.getDesc();
+                }
+            }
+            return "";
+        }
+    }
+
+    /**
+     * 第三方支付类型
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum ThirdPayType{
+        WECHAT(1,"微信"),ALIPAY(2,"支付宝"),BANK(3,"银行卡");
+
+        /**
+         * 类型
+         */
+        private Integer type;
+        /**
+         * 描述
+         */
+        private String desc;
+    }
+
+    /**
+     * 计费方式
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum ChargingWay{
+        CHARGING_ELECTRIC(1,"电量计量"),
+        CHARGING_TIME(2,"时间计量"),
+        CHARGING_TIME_ELECTRIC(3,"电量时间计量");
+        /**
+         * 状态
+         */
+        private Integer way;
+        /**
+         * 描述
+         */
+        private String wayDesc;
+    }
+
+    /**
+     * 充电计量方式
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum MeasureType {
+        RE_MEASURE(0,"重新计量"),APPEND_MEASURE(1,"电量追加");
+
+        /**
+         * 计量方式
+         */
+        private Integer type;
+
+        /**
+         * 描述
+         */
+        private String desc;
+    }
+}

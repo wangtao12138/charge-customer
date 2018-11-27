@@ -1,0 +1,14 @@
+package cn.com.cdboost.charge.customer.service.impl;
+
+import cn.com.cdboost.charge.customer.common.BaseServiceImpl;
+import cn.com.cdboost.charge.customer.model.OrgZfbAuthConfig;
+import cn.com.cdboost.charge.customer.service.OrgZfbAuthConfigService;
+import org.springframework.stereotype.Service;
+
+/**
+ * 组织与支付宝授权信息关联表单表接口实现类
+ */
+@Service
+public class OrgZfbAuthConfigServiceImpl extends BaseServiceImpl<OrgZfbAuthConfig> implements OrgZfbAuthConfigService {
+
+}

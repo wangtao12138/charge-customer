@@ -1,0 +1,51 @@
+package cn.com.cdboost.charge.customer.service;
+
+import cn.com.cdboost.charge.base.vo.PageData;
+import cn.com.cdboost.charge.customer.common.BaseService;
+import cn.com.cdboost.charge.customer.model.DeviceUseDetailed;
+import cn.com.cdboost.charge.customer.vo.info.TodayCustomerInfo;
+import cn.com.cdboost.charge.customer.vo.param.ChargeOrderQueryParam;
+import cn.com.cdboost.charge.customer.vo.param.IncomePageQueryParam;
+import cn.com.cdboost.charge.customer.vo.param.IncomeQueryParam;
+
+import java.util.List;
+
+/**
+ * 充电桩使用记录单表接口
+ */
+public interface IDeviceUseDetailedService extends BaseService<DeviceUseDetailed> {
+
+    // 根据参数实体对象，查询充电订单列表信息
+    List<DeviceUseDetailed> queryChargeOrders(ChargeOrderQueryParam queryParam);
+
+    // 查询某个用户充电中记录（排除该用户绑定的IC卡开电记录）
+    DeviceUseDetailed queryChargingOrder(String customerGuid);
+
+    // 根据充电唯一标识查询
+    DeviceUseDetailed queryChargeOrder(String chargingGuid);
+
+    //查询站点某时间段的使用记录
+    List<DeviceUseDetailed> queryUseDetail(IncomeQueryParam queryParam);
+
+    //分页查询站点某天的使用记录
+    PageData<DeviceUseDetailed> queryUseDetailPage(IncomePageQueryParam queryParam);
+
+    // 查询客户充电历史记录
+    PageData<DeviceUseDetailed> queryChargeHistory(String customerGuid, Integer pageNumber, Integer pageSize);
+
+    // 查询客户最近的一条充电记录
+    DeviceUseDetailed queryLatestChargeOrder(String customerGuid);
+
+    // 查询最近N条使用记录
+    List<DeviceUseDetailed> queryRecentNList(String cardId, Integer number);
+
+    //首页统计商户本日数据
+    TodayCustomerInfo queryTodayCount(String merchantGuid, String beginTime, String endTime);
+
+    //首页统计商户本日数据
+    DeviceUseDetailed queryDeviceUseDetailed(DeviceUseDetailed deviceUseDetailed);
+
+    List<DeviceUseDetailed> queryDeviceUseDetailed(String customerGuid);
+
+
+}

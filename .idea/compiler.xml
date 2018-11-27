@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="customer-common" />
+        <module name="customer-dao" />
+        <module name="customer-facade" />
+        <module name="customer-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="charge-customer" target="1.8" />
+      <module name="customer-common" target="1.8" />
+      <module name="customer-dao" target="1.8" />
+      <module name="customer-facade" target="1.8" />
+      <module name="customer-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

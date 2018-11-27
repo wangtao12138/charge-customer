@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/charge-customer.iml" filepath="$PROJECT_DIR$/charge-customer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customer-common/customer-common.iml" filepath="$PROJECT_DIR$/customer-common/customer-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customer-dao/customer-dao.iml" filepath="$PROJECT_DIR$/customer-dao/customer-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customer-facade/customer-facade.iml" filepath="$PROJECT_DIR$/customer-facade/customer-facade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customer-service/customer-service.iml" filepath="$PROJECT_DIR$/customer-service/customer-service.iml" />
+    </modules>
+  </component>
+</project>

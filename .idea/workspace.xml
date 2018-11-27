@@ -1,0 +1,1441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="c584d0d7-19e5-4e60-ac31-e2c2e798430a" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/customer-dao/target/" />
+    <ignored path="$PROJECT_DIR$/customer-service/target/" />
+    <ignored path="$PROJECT_DIR$/customer-facade/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/customer-common/target/" />
+    <ignored path=".idea/" />
+    <ignored path=".idea/inspectionProfiles/" />
+    <ignored path=".idea/libraries/" />
+    <ignored path="charge-customer.iml" />
+    <ignored path="customer-common/customer-common.iml" />
+    <ignored path="customer-dao/customer-dao.iml" />
+    <ignored path="customer-facade/customer-facade.iml" />
+    <ignored path="customer-service/customer-service.iml" />
+    <ignored path="logPath_IS_UNDEFINED/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CustomerToMerchantServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/dubbo/impl/CustomerToMerchantServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="775" column="24" lean-forward="false" selection-start-line="775" selection-start-column="24" selection-end-line="775" selection-end-column="24" />
+              <folding>
+                <marker date="1543295354085" expanded="true" signature="40111:40123" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/dubbo/impl/CustomerServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="766" column="0" lean-forward="true" selection-start-line="766" selection-start-column="0" selection-end-line="766" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChargeCustomerInfoDetailInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/ChargeCustomerInfoDetailInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/customer-service/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="106" column="9" lean-forward="false" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application-test.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/customer-service/src/main/resources/application-test.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application-prod.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/customer-service/src/main/resources/application-prod.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-154">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChargeCustomerInfoDetailDaoInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/info/ChargeCustomerInfoDetailDaoInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application-dev.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/customer-service/src/main/resources/application-dev.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeviceUseDetailedMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/customer-dao/src/main/resources/mapper/DeviceUseDetailedMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="185" column="43" lean-forward="false" selection-start-line="185" selection-start-column="43" selection-end-line="185" selection-end-column="43" />
+              <folding>
+                <marker date="1543051661623" expanded="true" signature="4787:5368" ph="SELECT h.sta... cp_d_device_use_detailed" />
+                <marker date="1543051661623" expanded="true" signature="7393:9219" ph="SELECT t.cus... cp_d_customer_info" />
+                <marker date="1543051661623" expanded="true" signature="7681:9154" ph="SELECT count... cp_d_customer_info" />
+                <marker date="1543051661623" expanded="true" signature="9307:9936" ph="SELECT t.cus... cp_d_customer_info" />
+                <marker date="1543051661623" expanded="true" signature="9307:9937" ph="SELECT t.cus... cp_d_customer_info" />
+                <marker date="1543051661623" expanded="true" signature="9638:9890" ph="SELECT count... cp_d_customer_info" />
+                <marker date="1543051661623" expanded="true" signature="11411:11977" ph="SELECT t.cre... cp_d_device_use_detailed" />
+                <marker date="1543051661623" expanded="true" signature="12133:12487" ph="SELECT t.sch... cp_d_device_use_detailed" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>icCardService</find>
+      <find>deviceSignalMapper</find>
+      <find>queryICCardPayList</find>
+      <find>customerInfoMapper</find>
+      <find>CustomerInfoListInfo</find>
+      <find>cn.com.cdboost.charge.customer.vo.info.CustomerInfoListInfo</find>
+      <find>useRecordList</find>
+      <find>customerInfoListMap</find>
+      <find>querySignalCurve</find>
+      <find>queryHeartBychargingGuid</find>
+      <find>heart</find>
+      <find>queryHeartList</find>
+      <find>ChargingGuid</find>
+      <find>customerInfoDetai</find>
+      <find>ImmutableMap</find>
+      <find>dayLineLoss</find>
+      <find>queryCurve</find>
+      <find>queryCountList</find>
+      <find>queryChargingRecordByChargingGuid</find>
+      <find>remain</find>
+      <find>querySchemeUseList</find>
+      <find>customerInfoList</find>
+      <find>queryICCardUseList</find>
+      <find>AccountQueryVo queryVo \= new AccountQueryVo\(\)\;\n        String customerGuid \= customerPay\.getCustomerGuid\(\)\;\n        queryVo\.setUserGuid\(customerGuid\)\;\n        queryVo\.setAccountCode\(AccountDictEnum\.CUSTOMER_AVAILABLE\.getAccountCode\(\)\)\;\n        UserAccountInfo accountInfo \= accountService\.queryAccountInfo\(queryVo\)\;</find>
+      <find>AccountQueryVo queryVo = new AccountQueryVo();</find>
+      <find>queryDeviceUseDetailed</find>
+      <find>customerGuid</find>
+      <find>customerInfoDetail</find>
+      <find>CancelPrePayVo</find>
+      <find>chargeRecordList</find>
+    </findStrings>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/customer-dao/pom.xml" />
+        <option value="$PROJECT_DIR$/customer-facade/pom.xml" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/param/ChargerDeviceQueryVo.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/CustomerInfoListDto.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/dubbo/CustomerService.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/info/UseRecordListDaoInfo.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/param/QueryListParamDate.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dao/CustomerPayMapper.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/CustomerInfoListDaoDto.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/ChargeRecordListDaoDto.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/QueryListDaoParam.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/QueryListParamDaoDate.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/UseRecordListDaoDto.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/info/ChargeRecordListDaoInfo.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/param/IcCardParam.java" />
+        <option value="$PROJECT_DIR$/customer-service/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/SignalCurveInfo.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/param/QueryListParam.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/param/PageQueryVo.java" />
+        <option value="$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/service/IDeviceLogService.java" />
+        <option value="$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/service/impl/IDeviceLogServiceImpl.java" />
+        <option value="$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/dubbo/impl/DeviceUseDetailedService.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/info/CustomerInfoListDaoInfo.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/CustomerInfoListInfo.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/UseRecordListInfo.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/resources/mapper/CustomerPayMapper.xml" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/dubbo/CustomerWebService.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/info/DayLineLossInfoDao.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/info/DayLineLossInfoimportDao.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/DayLineLossInfo.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/ElectricAndFeeDto.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/ElectricCountDto.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/DayLineLossInfoList.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/DayLineLossInfoimport.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/DayLineLossDto.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/ChargeRecordListInfo.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/Statistics.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dao/CustomerInfoMapper.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dao/DeviceUseDetailedMapper.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/DayLineLossDtoDao.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/info/DayLineLossInfoListDao.java" />
+        <option value="$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/dubbo/impl/CustomerWebServiceImpl.java" />
+        <option value="$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/dubbo/impl/RefundServiceImpl.java" />
+        <option value="$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/dubbo/impl/CustomerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/dubbo/CustomerToMerchantService.java" />
+        <option value="$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/service/impl/IDeviceUseDetailedServiceImpl.java" />
+        <option value="$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/service/IDeviceUseDetailedService.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/info/ChargeCustomerInfoDetailDaoInfo.java" />
+        <option value="$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/ChargeCustomerInfoDetailInfo.java" />
+        <option value="$PROJECT_DIR$/customer-dao/src/main/resources/mapper/DeviceUseDetailedMapper.xml" />
+        <option value="$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/dubbo/impl/CustomerToMerchantServiceImpl.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/apache-maven-3.5.0" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.5.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Profiles" type="6783ec58:MavenProjectsStructure$ProfilesNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="charge-customer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="charge-customer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="charge-customer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="customer-dao" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="customer-dao" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="customer-dao" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="mybatis-generator" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="27" />
+    <option name="y" value="20" />
+    <option name="width" value="1452" />
+    <option name="height" value="809" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource ProjectPane="true" />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="info" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-facade" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-facade" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-facade" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-facade" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-facade" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dubbo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-facade" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="info" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="charge-customer" type="462c0819:PsiDirectoryNode" />
+              <item name="customer-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.alibaba:dubbo:2.6.2" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="charge-customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.alibaba:dubbo:2.6.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="dubbo-2.6.2.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../develop-baiyun" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.com.cdboost.charge.customer.dto" />
+      <recent name="cn.com.cdboost.charge.customer.dto.info" />
+      <recent name="cn.com.cdboost.charge.customer.vo.info" />
+      <recent name="cn.com.cdboost.charge.customer.dubbo.impl" />
+      <recent name="cn.com.cdboost.charge.customer.vo.param" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-dao\src\main\resources\mapper\CustomerPayMapper.xml</PATH>
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-dao\src\main\resources\mapper\DeviceUsePayRelationMapper.xml</PATH>
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-dao\src\main\resources\generator\generatorConfig.xml</PATH>
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-dao\src\main\java\cn\com\cdboost\charge\customer\model\DeviceUsePayRelation.java</PATH>
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-dao\src\main\java\cn\com\cdboost\charge\customer\model\CustomerPay.java</PATH>
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-facade\src\main\java\cn\com\cdboost\charge\customer\vo\info\WechatChargeInfo.java</PATH>
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-facade\src\main\java\cn\com\cdboost\charge\customer\vo\info\AlipayChargeInfo.java</PATH>
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-facade\src\main\java\cn\com\cdboost\charge\customer\constant\CustomerConstant.java</PATH>
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-facade\src\main\java\cn\com\cdboost\charge\customer\dubbo\CustomerService.java</PATH>
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-facade\src\main\java\cn\com\cdboost\charge\customer\dubbo\RefundService.java</PATH>
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-service\src\main\java\cn\com\cdboost\charge\customer\dubbo\impl\CustomerServiceImpl.java</PATH>
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-service\src\main\java\cn\com\cdboost\charge\customer\dubbo\impl\RefundServiceImpl.java</PATH>
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-service\src\main\java\cn\com\cdboost\charge\customer\service\impl\ICustomerPayServiceImpl.java</PATH>
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-service\src\main\java\cn\com\cdboost\charge\customer\service\ICustomerPayService.java</PATH>
+          <PATH vcs="svn" revision="546">D:\svn\charge-customer\customer-service\src\main\resources\application-dev.yml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration name="CustomerServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.com.cdboost.charge.customer.CustomerServiceApplication" />
+      <module name="customer-service" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration" myUseAcceleration="nothing" cleanupOnStartRun="true">
+    <configuration>C:\Users\boost\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\svn\charge-customer" />
+          <option name="myCopyRoot" value="D:\svn\charge-customer" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\svn\charge-customer\customer-common" />
+          <option name="myCopyRoot" value="D:\svn\charge-customer\customer-common" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\svn\charge-customer\customer-dao" />
+          <option name="myCopyRoot" value="D:\svn\charge-customer\customer-dao" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\svn\charge-customer\customer-facade" />
+          <option name="myCopyRoot" value="D:\svn\charge-customer\customer-facade" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\svn\charge-customer\customer-service" />
+          <option name="myCopyRoot" value="D:\svn\charge-customer\customer-service" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\svn\charge-customer" />
+          <option name="myCopyRoot" value="D:\svn\charge-customer" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c584d0d7-19e5-4e60-ac31-e2c2e798430a" name="Default" comment="" />
+      <created>1541556332578</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1541556332578</updated>
+      <workItem from="1541556334406" duration="41552000" />
+      <workItem from="1541671641681" duration="25931000" />
+      <workItem from="1542243809067" duration="39000" />
+      <workItem from="1542271821280" duration="40911000" />
+      <workItem from="1542787292491" duration="3909000" />
+      <workItem from="1542935455598" duration="3060000" />
+      <workItem from="1543026975716" duration="18169000" />
+    </task>
+    <task id="LOCAL-00001">
+      <created>1541589234119</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1541589234119</updated>
+    </task>
+    <task id="LOCAL-00002">
+      <created>1541670253106</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1541670253106</updated>
+    </task>
+    <task id="LOCAL-00003">
+      <created>1541671906108</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1541671906108</updated>
+    </task>
+    <task id="LOCAL-00004">
+      <created>1541729592106</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1541729592106</updated>
+    </task>
+    <task id="LOCAL-00005">
+      <created>1542014653588</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1542014653601</updated>
+    </task>
+    <task id="LOCAL-00006">
+      <created>1542199353105</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542199353105</updated>
+    </task>
+    <task id="LOCAL-00007">
+      <created>1542351712112</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1542351712112</updated>
+    </task>
+    <task id="LOCAL-00008">
+      <created>1542359952105</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1542359952105</updated>
+    </task>
+    <task id="LOCAL-00009">
+      <created>1542695646106</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1542695646106</updated>
+    </task>
+    <task id="LOCAL-00010">
+      <created>1543046968134</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1543046968134</updated>
+    </task>
+    <task id="LOCAL-00011">
+      <created>1543051189110</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1543051189110</updated>
+    </task>
+    <task id="LOCAL-00012">
+      <created>1543051558118</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1543051558118</updated>
+    </task>
+    <task id="LOCAL-00013">
+      <created>1543051617105</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1543051617105</updated>
+    </task>
+    <task id="LOCAL-00014">
+      <created>1543051666116</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1543051666116</updated>
+    </task>
+    <task id="LOCAL-00015">
+      <created>1543295484119</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1543295484119</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="133571000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18994413" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15902579" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30865923" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46089387" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24140401" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16061452" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/dubbo/impl/CustomerToMerchantServiceImpl.java</url>
+          <line>433</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="17" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/CustomerPayCardInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/DayLineLossInfoList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/DayLineLossInfoimport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="58" lean-forward="false" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/ChargeRecordListInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/ElectricAndFeeDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/ElectricCountDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/Statistics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/UseRecordListInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-dao/src/main/resources/mapper/CustomerInfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/dubbo/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/CustomerBaseInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/DeviceLogInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/DeviceUseDetailedVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/DayLineLossInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/info/DayLineLossInfoListDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dao/CustomerInfoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/DayLineLossDtoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/info/CustomerInfoListDaoInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/info/DayLineLossInfoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/info/MessageListDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/info/UseRecordListDaoInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/service/IDeviceLogService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/DayLineLossDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/dubbo/CustomerWebService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/service/ICustomerInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="64" lean-forward="false" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/model/CustomerInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/repository/cn/com/cdboost/settlement-facade/1.0-SNAPSHOT/settlement-facade-1.0-20181116.084609-5.jar!/cn/com/cdboost/charge/settlement/dubbo/AccountService.class" />
+    <entry file="file://$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/dubbo/impl/CustomerWebServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/repository/cn/com/cdboost/payment-facade/1.0-SNAPSHOT/payment-facade-1.0-20181116.084753-2.jar!/cn/com/cdboost/charge/payment/dubbo/AlipayService.class" />
+    <entry file="jar://D:/repository/cn/com/cdboost/merchant-facade/1.0-SNAPSHOT/merchant-facade-1.0-SNAPSHOT-sources.jar!/cn/com/cdboost/charge/merchant/vo/info/ChargingSchemeDeviceVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/repository/cn/com/cdboost/settlement-facade/1.0-SNAPSHOT/settlement-facade-1.0-20181121.033913-6.jar!/cn/com/cdboost/charge/settlement/dubbo/AccountService.class" />
+    <entry file="file://$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/dubbo/impl/RefundServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/repository/cn/com/cdboost/settlement-facade/1.0-SNAPSHOT/settlement-facade-1.0-20181124.022313-7.jar!/cn/com/cdboost/charge/settlement/constant/AccountDictEnum.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/CustomerInfoListInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/repository/cn/com/cdboost/settlement-facade/1.0-SNAPSHOT/settlement-facade-1.0-20181124.022313-7.jar!/cn/com/cdboost/charge/settlement/dubbo/AccountService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/repository/com/alibaba/dubbo/2.6.2/dubbo-2.6.2.jar!/com/alibaba/dubbo/rpc/proxy/AbstractProxyInvoker.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <marker date="1538968139080" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1538968139080" expanded="false" signature="151:431" ph="..." />
+            <marker date="1538968139080" expanded="true" signature="656:1137" ph="{...}" />
+            <marker date="1538968139080" expanded="false" signature="1173:1184" ph=" { " />
+            <marker date="1538968139080" expanded="false" signature="1201:1207" ph=" }" />
+            <marker date="1538968139080" expanded="false" signature="1232:1243" ph=" { " />
+            <marker date="1538968139080" expanded="false" signature="1259:1265" ph=" }" />
+            <marker date="1538968139080" expanded="false" signature="1299:1310" ph=" { " />
+            <marker date="1538968139080" expanded="false" signature="1322:1328" ph=" }" />
+            <marker date="1538968139080" expanded="true" signature="1356:1363" ph="{}" />
+            <marker date="1538968139080" expanded="true" signature="1433:1930" ph="{...}" />
+            <marker date="1538968139080" expanded="true" signature="2072:2183" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/repository/cn/com/cdboost/merchant-facade/1.0-SNAPSHOT/merchant-facade-1.0-SNAPSHOT-sources.jar!/cn/com/cdboost/charge/merchant/dubbo/DeviceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="72" column="19" lean-forward="false" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dao/DeviceUseDetailedMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/model/DeviceUseDetailed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/service/IDeviceUseDetailedService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/service/impl/IDeviceUseDetailedServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="194" column="35" lean-forward="false" selection-start-line="194" selection-start-column="35" selection-end-line="194" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/dubbo/CustomerToMerchantService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-dao/src/main/java/cn/com/cdboost/charge/customer/dto/info/ChargeCustomerInfoDetailDaoInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-facade/src/main/java/cn/com/cdboost/charge/customer/vo/info/ChargeCustomerInfoDetailInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-dao/src/main/resources/mapper/DeviceUseDetailedMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="185" column="43" lean-forward="false" selection-start-line="185" selection-start-column="43" selection-end-line="185" selection-end-column="43" />
+          <folding>
+            <marker date="1543051661623" expanded="true" signature="4787:5368" ph="SELECT h.sta... cp_d_device_use_detailed" />
+            <marker date="1543051661623" expanded="true" signature="7393:9219" ph="SELECT t.cus... cp_d_customer_info" />
+            <marker date="1543051661623" expanded="true" signature="7681:9154" ph="SELECT count... cp_d_customer_info" />
+            <marker date="1543051661623" expanded="true" signature="9307:9936" ph="SELECT t.cus... cp_d_customer_info" />
+            <marker date="1543051661623" expanded="true" signature="9307:9937" ph="SELECT t.cus... cp_d_customer_info" />
+            <marker date="1543051661623" expanded="true" signature="9638:9890" ph="SELECT count... cp_d_customer_info" />
+            <marker date="1543051661623" expanded="true" signature="11411:11977" ph="SELECT t.cre... cp_d_device_use_detailed" />
+            <marker date="1543051661623" expanded="true" signature="12133:12487" ph="SELECT t.sch... cp_d_device_use_detailed" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-service/src/main/resources/application-test.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-service/src/main/resources/application-prod.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-service/src/main/resources/application-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/dubbo/impl/CustomerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="766" column="0" lean-forward="true" selection-start-line="766" selection-start-column="0" selection-end-line="766" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-service/src/main/java/cn/com/cdboost/charge/customer/dubbo/impl/CustomerToMerchantServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="775" column="24" lean-forward="false" selection-start-line="775" selection-start-column="24" selection-end-line="775" selection-end-column="24" />
+          <folding>
+            <marker date="1543295354085" expanded="true" signature="40111:40123" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="106" column="9" lean-forward="false" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

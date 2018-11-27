@@ -1,0 +1,63 @@
+package cn.com.cdboost.charge.customer.service.impl;
+
+import cn.com.cdboost.charge.customer.common.BaseServiceImpl;
+import cn.com.cdboost.charge.customer.dao.CustomerInfoMapper;
+import cn.com.cdboost.charge.customer.model.CustomerInfo;
+import cn.com.cdboost.charge.customer.service.ICustomerInfoService;
+import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Condition;
+import tk.mybatis.mapper.entity.Example;
+
+import javax.annotation.Resource;
+
+/**
+ * 客户信息单表接口实现
+ */
+@Service
+public class ICustomerInfoServiceImpl extends BaseServiceImpl<CustomerInfo> implements ICustomerInfoService {
+
+    @Resource
+    private CustomerInfoMapper customerInfoMapper;
+
+    @Override
+    public CustomerInfo queryByOpenId(String openId) {
+        CustomerInfo param = new CustomerInfo();
+        param.setWebcharNo(openId);
+        return customerInfoMapper.selectOne(param);
+    }
+
+    @Override
+    public CustomerInfo queryByAlipayUserId(String alipayUserId) {
+        CustomerInfo param = new CustomerInfo();
+        param.setAlipayUserId(alipayUserId);
+        return customerInfoMapper.selectOne(param);
+    }
+
+    @Override
+    public CustomerInfo queryCustomerInfo(CustomerInfo customerInfo) {
+        return customerInfoMapper.selectOne(customerInfo);
+    }
+
+    @Override
+    public CustomerInfo queryByCustomerContact(String customerContact) {
+        CustomerInfo param = new CustomerInfo();
+        param.setCustomerContact(customerContact);
+        return customerInfoMapper.selectOne(param);
+    }
+
+    @Override
+    public CustomerInfo queryByCustomerGuid(String customerGuid) {
+        CustomerInfo param = new CustomerInfo();
+        param.setCustomerGuid(customerGuid);
+        return customerInfoMapper.selectOne(param);
+    }
+
+    @Override
+    public int updateSelectiveByCustomerGuid(CustomerInfo param) {
+        Condition condition = new Condition(CustomerInfo.class);
+        Example.Criteria criteria = condition.createCriteria();
+        criteria.andEqualTo("customerGuid",param.getCustomerGuid());
+
+        return customerInfoMapper.updateByConditionSelective(param,condition);
+    }
+}

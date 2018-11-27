@@ -1,0 +1,895 @@
+package cn.com.cdboost.charge.customer.model;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
+
+@Table(name = "cp_d_device_use_detailed")
+public class DeviceUseDetailed implements Serializable {
+    /**
+     * 标识id
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    /**
+     * 项目标识
+     */
+    @Column(name = "project_guid")
+    private String projectGuid;
+
+    /**
+     * 商户标识
+     */
+    @Column(name = "merchant_guid")
+    private String merchantGuid;
+
+    /**
+     * 客户唯一标识
+     */
+    @Column(name = "customer_guid")
+    private String customerGuid;
+
+    @Column(name = "charging_plie_guid")
+    private String chargingPlieGuid;
+
+    /**
+     * 同充值方案表一样，充值类别 1-临时充值  2-包月充值 3-一次充满 4-余额活动充值
+     */
+    @Column(name = "pay_category")
+    private Integer payCategory;
+
+    /**
+     * 1-按时充电 2-按电量充电 3-充满断电
+     */
+    @Column(name = "charging_way")
+    private Integer chargingWay;
+
+    /**
+     * 0 - 不限制 其他值标识充电时长，单位小时
+     */
+    @Column(name = "charging_time")
+    private Integer chargingTime;
+
+    /**
+     * 应充电电量 0-不限制 其他为电量
+     */
+    @Column(name = "charging_power")
+    private Integer chargingPower;
+
+    /**
+     * 充电情况
+     */
+    @Column(name = "charging_percent")
+    private BigDecimal chargingPercent;
+
+    /**
+     * 开始充电时间
+     */
+    @Column(name = "start_time")
+    private Date startTime;
+
+    /**
+     * 结束充电时间
+     */
+    @Column(name = "end_time")
+    private Date endTime;
+
+    /**
+     * 充电结束方式 0 - 自动 1 -手动
+     */
+    @Column(name = "end_method")
+    private Integer endMethod;
+
+    /**
+     * 实际充电时长 单位(分钟)
+     */
+    @Column(name = "use_time")
+    private Integer useTime;
+
+    /**
+     * 实际用电量
+     */
+    @Column(name = "use_power")
+    private BigDecimal usePower;
+
+    /**
+     * 退费金额
+     */
+    @Column(name = "refund_money")
+    private BigDecimal refundMoney;
+
+    /**
+     * 充电方案标识
+     */
+    @Column(name = "scheme_guid")
+    private String schemeGuid;
+
+    /**
+     * 实际电价
+     */
+    @Column(name = "real_price")
+    private BigDecimal realPrice;
+
+    /**
+     * 结算电价
+     */
+    @Column(name = "settlement_price")
+    private BigDecimal settlementPrice;
+
+    /**
+     * 实际消费
+     */
+    @Column(name = "consumption_money")
+    private BigDecimal consumptionMoney;
+
+    /**
+     * 充电扣除费用
+     */
+    @Column(name = "deduct_money")
+    private BigDecimal deductMoney;
+
+    /**
+     * 月卡充电时，扣除次数
+     */
+    @Column(name = "deduct_cnt")
+    private Integer deductCnt;
+
+    /**
+     * 实际电费
+     */
+    @Column(name = "real_power_money")
+    private BigDecimal realPowerMoney;
+
+    /**
+     * 盈利费用
+     */
+    private BigDecimal profitable;
+
+    /**
+     * 当前状态 0-正在充电 1-已完成充电
+     */
+    private Integer state;
+
+    /**
+     * 充电记录唯一标识
+     */
+    @Column(name = "charging_guid")
+    private String chargingGuid;
+
+    /**
+     * 充电最大时长
+     */
+    @Column(name = "charging_max_time")
+    private Integer chargingMaxTime;
+
+    /**
+     * 本次充电后剩余次数，包月用户有效
+     */
+    @Column(name = "after_remain_cnt")
+    private Integer afterRemainCnt;
+
+    /**
+     * 本次充电后剩余金额
+     */
+    @Column(name = "after_remain_amount")
+    private BigDecimal afterRemainAmount;
+
+    /**
+     * 设备上报记录日志表主键
+     */
+    @Column(name = "dev_log_id")
+    private Integer devLogId;
+
+    /**
+     * 开启方式 1-微信 2-支付宝 3-IC卡
+     */
+    @Column(name = "open_means")
+    private Integer openMeans;
+
+    /**
+     * 开启编号根据开启方式对应编号
+     */
+    @Column(name = "open_no")
+    private String openNo;
+
+    /**
+     * 最大电流
+     */
+    @Column(name = "max_current")
+    private BigDecimal maxCurrent;
+
+    /**
+     * 最大功率
+     */
+    @Column(name = "max_power")
+    private BigDecimal maxPower;
+
+    /**
+     * 用户状态 1 正常 0 禁用
+     */
+    @Column(name = "customer_state")
+    private Integer customerState;
+
+    /**
+     * ic卡编号
+     */
+    @Column(name = "card_id")
+    private String cardId;
+
+    /**
+     * 创建时间
+     */
+    @Column(name = "create_time")
+    private Date createTime;
+
+    /**
+     * 物业标识
+     */
+    @Column(name = "property_guid")
+    private String propertyGuid;
+
+    private static final long serialVersionUID = 1L;
+
+    public String getPropertyGuid() {
+        return propertyGuid;
+    }
+
+    public void setPropertyGuid(String propertyGuid) {
+        this.propertyGuid = propertyGuid;
+    }
+
+    /**
+     * 获取标识id
+     *
+     * @return id - 标识id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * 设置标识id
+     *
+     * @param id 标识id
+     */
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    /**
+     * 获取项目标识
+     *
+     * @return project_guid - 项目标识
+     */
+    public String getProjectGuid() {
+        return projectGuid;
+    }
+
+    /**
+     * 设置项目标识
+     *
+     * @param projectGuid 项目标识
+     */
+    public void setProjectGuid(String projectGuid) {
+        this.projectGuid = projectGuid;
+    }
+
+    /**
+     * 获取商户标识
+     *
+     * @return merchant_guid - 商户标识
+     */
+    public String getMerchantGuid() {
+        return merchantGuid;
+    }
+
+    /**
+     * 设置商户标识
+     *
+     * @param merchantGuid 商户标识
+     */
+    public void setMerchantGuid(String merchantGuid) {
+        this.merchantGuid = merchantGuid;
+    }
+
+    /**
+     * 获取客户唯一标识
+     *
+     * @return customer_guid - 客户唯一标识
+     */
+    public String getCustomerGuid() {
+        return customerGuid;
+    }
+
+    /**
+     * 设置客户唯一标识
+     *
+     * @param customerGuid 客户唯一标识
+     */
+    public void setCustomerGuid(String customerGuid) {
+        this.customerGuid = customerGuid;
+    }
+
+    /**
+     * @return charging_plie_guid
+     */
+    public String getChargingPlieGuid() {
+        return chargingPlieGuid;
+    }
+
+    /**
+     * @param chargingPlieGuid
+     */
+    public void setChargingPlieGuid(String chargingPlieGuid) {
+        this.chargingPlieGuid = chargingPlieGuid;
+    }
+
+    /**
+     * 获取同充值方案表一样，充值类别 1-临时充值  2-包月充值 3-一次充满 4-余额活动充值
+     *
+     * @return pay_category - 同充值方案表一样，充值类别 1-临时充值  2-包月充值 3-一次充满 4-余额活动充值
+     */
+    public Integer getPayCategory() {
+        return payCategory;
+    }
+
+    /**
+     * 设置同充值方案表一样，充值类别 1-临时充值  2-包月充值 3-一次充满 4-余额活动充值
+     *
+     * @param payCategory 同充值方案表一样，充值类别 1-临时充值  2-包月充值 3-一次充满 4-余额活动充值
+     */
+    public void setPayCategory(Integer payCategory) {
+        this.payCategory = payCategory;
+    }
+
+    /**
+     * 获取1-按时充电 2-按电量充电 3-充满断电
+     *
+     * @return charging_way - 1-按时充电 2-按电量充电 3-充满断电
+     */
+    public Integer getChargingWay() {
+        return chargingWay;
+    }
+
+    /**
+     * 设置1-按时充电 2-按电量充电 3-充满断电
+     *
+     * @param chargingWay 1-按时充电 2-按电量充电 3-充满断电
+     */
+    public void setChargingWay(Integer chargingWay) {
+        this.chargingWay = chargingWay;
+    }
+
+    /**
+     * 获取0 - 不限制 其他值标识充电时长，单位小时
+     *
+     * @return charging_time - 0 - 不限制 其他值标识充电时长，单位小时
+     */
+    public Integer getChargingTime() {
+        return chargingTime;
+    }
+
+    /**
+     * 设置0 - 不限制 其他值标识充电时长，单位小时
+     *
+     * @param chargingTime 0 - 不限制 其他值标识充电时长，单位小时
+     */
+    public void setChargingTime(Integer chargingTime) {
+        this.chargingTime = chargingTime;
+    }
+
+    /**
+     * 获取应充电电量 0-不限制 其他为电量
+     *
+     * @return charging_power - 应充电电量 0-不限制 其他为电量
+     */
+    public Integer getChargingPower() {
+        return chargingPower;
+    }
+
+    /**
+     * 设置应充电电量 0-不限制 其他为电量
+     *
+     * @param chargingPower 应充电电量 0-不限制 其他为电量
+     */
+    public void setChargingPower(Integer chargingPower) {
+        this.chargingPower = chargingPower;
+    }
+
+    /**
+     * 获取充电情况
+     *
+     * @return charging_percent - 充电情况
+     */
+    public BigDecimal getChargingPercent() {
+        return chargingPercent;
+    }
+
+    /**
+     * 设置充电情况
+     *
+     * @param chargingPercent 充电情况
+     */
+    public void setChargingPercent(BigDecimal chargingPercent) {
+        this.chargingPercent = chargingPercent;
+    }
+
+    /**
+     * 获取开始充电时间
+     *
+     * @return start_time - 开始充电时间
+     */
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    /**
+     * 设置开始充电时间
+     *
+     * @param startTime 开始充电时间
+     */
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * 获取结束充电时间
+     *
+     * @return end_time - 结束充电时间
+     */
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    /**
+     * 设置结束充电时间
+     *
+     * @param endTime 结束充电时间
+     */
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    /**
+     * 获取充电结束方式 0 - 自动 1 -手动
+     *
+     * @return end_method - 充电结束方式 0 - 自动 1 -手动
+     */
+    public Integer getEndMethod() {
+        return endMethod;
+    }
+
+    /**
+     * 设置充电结束方式 0 - 自动 1 -手动
+     *
+     * @param endMethod 充电结束方式 0 - 自动 1 -手动
+     */
+    public void setEndMethod(Integer endMethod) {
+        this.endMethod = endMethod;
+    }
+
+    /**
+     * 获取实际充电时长 单位(分钟)
+     *
+     * @return use_time - 实际充电时长 单位(分钟)
+     */
+    public Integer getUseTime() {
+        return useTime;
+    }
+
+    /**
+     * 设置实际充电时长 单位(分钟)
+     *
+     * @param useTime 实际充电时长 单位(分钟)
+     */
+    public void setUseTime(Integer useTime) {
+        this.useTime = useTime;
+    }
+
+    /**
+     * 获取实际用电量
+     *
+     * @return use_power - 实际用电量
+     */
+    public BigDecimal getUsePower() {
+        return usePower;
+    }
+
+    /**
+     * 设置实际用电量
+     *
+     * @param usePower 实际用电量
+     */
+    public void setUsePower(BigDecimal usePower) {
+        this.usePower = usePower;
+    }
+
+    /**
+     * 获取退费金额
+     *
+     * @return refund_money - 退费金额
+     */
+    public BigDecimal getRefundMoney() {
+        return refundMoney;
+    }
+
+    /**
+     * 设置退费金额
+     *
+     * @param refundMoney 退费金额
+     */
+    public void setRefundMoney(BigDecimal refundMoney) {
+        this.refundMoney = refundMoney;
+    }
+
+    /**
+     * 获取充电方案标识
+     *
+     * @return scheme_guid - 充电方案标识
+     */
+    public String getSchemeGuid() {
+        return schemeGuid;
+    }
+
+    /**
+     * 设置充电方案标识
+     *
+     * @param schemeGuid 充电方案标识
+     */
+    public void setSchemeGuid(String schemeGuid) {
+        this.schemeGuid = schemeGuid;
+    }
+
+    /**
+     * 获取实际电价
+     *
+     * @return real_price - 实际电价
+     */
+    public BigDecimal getRealPrice() {
+        return realPrice;
+    }
+
+    /**
+     * 设置实际电价
+     *
+     * @param realPrice 实际电价
+     */
+    public void setRealPrice(BigDecimal realPrice) {
+        this.realPrice = realPrice;
+    }
+
+    /**
+     * 获取结算电价
+     *
+     * @return settlement_price - 结算电价
+     */
+    public BigDecimal getSettlementPrice() {
+        return settlementPrice;
+    }
+
+    /**
+     * 设置结算电价
+     *
+     * @param settlementPrice 结算电价
+     */
+    public void setSettlementPrice(BigDecimal settlementPrice) {
+        this.settlementPrice = settlementPrice;
+    }
+
+    /**
+     * 获取实际消费
+     *
+     * @return consumption_money - 实际消费
+     */
+    public BigDecimal getConsumptionMoney() {
+        return consumptionMoney;
+    }
+
+    /**
+     * 设置实际消费
+     *
+     * @param consumptionMoney 实际消费
+     */
+    public void setConsumptionMoney(BigDecimal consumptionMoney) {
+        this.consumptionMoney = consumptionMoney;
+    }
+
+    /**
+     * 获取充电扣除费用
+     *
+     * @return deduct_money - 充电扣除费用
+     */
+    public BigDecimal getDeductMoney() {
+        return deductMoney;
+    }
+
+    /**
+     * 设置充电扣除费用
+     *
+     * @param deductMoney 充电扣除费用
+     */
+    public void setDeductMoney(BigDecimal deductMoney) {
+        this.deductMoney = deductMoney;
+    }
+
+    /**
+     * 获取实际电费
+     *
+     * @return real_power_money - 实际电费
+     */
+    public BigDecimal getRealPowerMoney() {
+        return realPowerMoney;
+    }
+
+    /**
+     * 设置实际电费
+     *
+     * @param realPowerMoney 实际电费
+     */
+    public void setRealPowerMoney(BigDecimal realPowerMoney) {
+        this.realPowerMoney = realPowerMoney;
+    }
+
+    /**
+     * 获取盈利费用
+     *
+     * @return profitable - 盈利费用
+     */
+    public BigDecimal getProfitable() {
+        return profitable;
+    }
+
+    /**
+     * 设置盈利费用
+     *
+     * @param profitable 盈利费用
+     */
+    public void setProfitable(BigDecimal profitable) {
+        this.profitable = profitable;
+    }
+
+    /**
+     * 获取当前状态 0-正在充电 1-已完成充电
+     *
+     * @return state - 当前状态 0-正在充电 1-已完成充电
+     */
+    public Integer getState() {
+        return state;
+    }
+
+    /**
+     * 设置当前状态 0-正在充电 1-已完成充电
+     *
+     * @param state 当前状态 0-正在充电 1-已完成充电
+     */
+    public void setState(Integer state) {
+        this.state = state;
+    }
+
+    /**
+     * 获取充电记录唯一标识
+     *
+     * @return charging_guid - 充电记录唯一标识
+     */
+    public String getChargingGuid() {
+        return chargingGuid;
+    }
+
+    /**
+     * 设置充电记录唯一标识
+     *
+     * @param chargingGuid 充电记录唯一标识
+     */
+    public void setChargingGuid(String chargingGuid) {
+        this.chargingGuid = chargingGuid;
+    }
+
+    /**
+     * 获取充电最大时长
+     *
+     * @return charging_max_time - 充电最大时长
+     */
+    public Integer getChargingMaxTime() {
+        return chargingMaxTime;
+    }
+
+    /**
+     * 设置充电最大时长
+     *
+     * @param chargingMaxTime 充电最大时长
+     */
+    public void setChargingMaxTime(Integer chargingMaxTime) {
+        this.chargingMaxTime = chargingMaxTime;
+    }
+
+    /**
+     * 获取本次充电后剩余次数，包月用户有效
+     *
+     * @return after_remain_cnt - 本次充电后剩余次数，包月用户有效
+     */
+    public Integer getAfterRemainCnt() {
+        return afterRemainCnt;
+    }
+
+    /**
+     * 设置本次充电后剩余次数，包月用户有效
+     *
+     * @param afterRemainCnt 本次充电后剩余次数，包月用户有效
+     */
+    public void setAfterRemainCnt(Integer afterRemainCnt) {
+        this.afterRemainCnt = afterRemainCnt;
+    }
+
+    /**
+     * 获取本次充电后剩余金额
+     *
+     * @return after_remain_amount - 本次充电后剩余金额
+     */
+    public BigDecimal getAfterRemainAmount() {
+        return afterRemainAmount;
+    }
+
+    /**
+     * 设置本次充电后剩余金额
+     *
+     * @param afterRemainAmount 本次充电后剩余金额
+     */
+    public void setAfterRemainAmount(BigDecimal afterRemainAmount) {
+        this.afterRemainAmount = afterRemainAmount;
+    }
+
+    /**
+     * 获取设备上报记录日志表主键
+     *
+     * @return dev_log_id - 设备上报记录日志表主键
+     */
+    public Integer getDevLogId() {
+        return devLogId;
+    }
+
+    /**
+     * 设置设备上报记录日志表主键
+     *
+     * @param devLogId 设备上报记录日志表主键
+     */
+    public void setDevLogId(Integer devLogId) {
+        this.devLogId = devLogId;
+    }
+
+    /**
+     * 获取开启方式 1-微信 2-支付宝 3-IC卡
+     *
+     * @return open_means - 开启方式 1-微信 2-支付宝 3-IC卡
+     */
+    public Integer getOpenMeans() {
+        return openMeans;
+    }
+
+    /**
+     * 设置开启方式 1-微信 2-支付宝 3-IC卡
+     *
+     * @param openMeans 开启方式 1-微信 2-支付宝 3-IC卡
+     */
+    public void setOpenMeans(Integer openMeans) {
+        this.openMeans = openMeans;
+    }
+
+    /**
+     * 获取开启编号根据开启方式对应编号
+     *
+     * @return open_no - 开启编号根据开启方式对应编号
+     */
+    public String getOpenNo() {
+        return openNo;
+    }
+
+    /**
+     * 设置开启编号根据开启方式对应编号
+     *
+     * @param openNo 开启编号根据开启方式对应编号
+     */
+    public void setOpenNo(String openNo) {
+        this.openNo = openNo;
+    }
+
+    /**
+     * 获取最大电流
+     *
+     * @return max_current - 最大电流
+     */
+    public BigDecimal getMaxCurrent() {
+        return maxCurrent;
+    }
+
+    /**
+     * 设置最大电流
+     *
+     * @param maxCurrent 最大电流
+     */
+    public void setMaxCurrent(BigDecimal maxCurrent) {
+        this.maxCurrent = maxCurrent;
+    }
+
+    /**
+     * 获取最大功率
+     *
+     * @return max_power - 最大功率
+     */
+    public BigDecimal getMaxPower() {
+        return maxPower;
+    }
+
+    /**
+     * 设置最大功率
+     *
+     * @param maxPower 最大功率
+     */
+    public void setMaxPower(BigDecimal maxPower) {
+        this.maxPower = maxPower;
+    }
+
+    /**
+     * 获取用户状态 1 正常 0 禁用
+     *
+     * @return customer_state - 用户状态 1 正常 0 禁用
+     */
+    public Integer getCustomerState() {
+        return customerState;
+    }
+
+    /**
+     * 设置用户状态 1 正常 0 禁用
+     *
+     * @param customerState 用户状态 1 正常 0 禁用
+     */
+    public void setCustomerState(Integer customerState) {
+        this.customerState = customerState;
+    }
+
+    /**
+     * 获取ic卡编号
+     *
+     * @return card_id - ic卡编号
+     */
+    public String getCardId() {
+        return cardId;
+    }
+
+    /**
+     * 设置ic卡编号
+     *
+     * @param cardId ic卡编号
+     */
+    public void setCardId(String cardId) {
+        this.cardId = cardId;
+    }
+
+    /**
+     * 获取创建时间
+     *
+     * @return create_time - 创建时间
+     */
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    /**
+     * 设置创建时间
+     *
+     * @param createTime 创建时间
+     */
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Integer getDeductCnt() {
+        return deductCnt;
+    }
+
+    public void setDeductCnt(Integer deductCnt) {
+        this.deductCnt = deductCnt;
+    }
+}

@@ -1,0 +1,19 @@
+package cn.com.cdboost.charge.customer.dubbo;
+
+import cn.com.cdboost.charge.customer.vo.param.RefundVo;
+
+/**
+ * 退款服务
+ */
+public interface RefundService {
+    /**
+     * 发起退款申请
+     * @param refundVo
+     */
+    void refundApply(RefundVo refundVo);
+
+    /**
+     * 开电失败退款
+     */
+    void cancelPayRefund(String chargingGuid,String signGuid);
+}

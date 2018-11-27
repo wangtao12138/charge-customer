@@ -1,0 +1,244 @@
+package cn.com.cdboost.charge.customer.dubbo;
+
+
+import cn.com.cdboost.charge.base.vo.PageData;
+import cn.com.cdboost.charge.customer.vo.info.*;
+import cn.com.cdboost.charge.customer.vo.param.*;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * 客户服务
+ */
+public interface CustomerService {
+    /**
+     * 根据appType查询
+     * @param appType
+     * @param openId
+     * @return
+     */
+    CustomerBaseInfo queryByParams(Integer appType, String openId);
+
+    /**
+     * 查询客户基本信息
+     * @param queryParam
+     * @return
+     */
+    CustomerBaseInfo queryBaseInfo(CustomerQueryParam queryParam);
+
+    /**
+     * 分页查询客户充值订单信息
+     * @param queryParam
+     * @return
+     */
+    List<PayOrderInfo> queryPayOrderInfos(PayOrderQueryParam queryParam);
+
+    /**
+     * 分页查询客户充电使用记录信息
+     * @param queryParam
+     * @return
+     */
+    List<ChargeOrderInfo> queryChargeOrderInfos(ChargeOrderQueryParam queryParam);
+
+    /**
+     * 查询某个用户充电中记录（排除该用户绑定的IC卡开电记录）
+     * @param customerGuid
+     * @return
+     */
+    ChargeOrderInfo queryChargingOrderByCustomerGuid(String customerGuid);
+
+    /**
+     * 根据chargingGuid查询充电记录
+     * @param chargingGuid
+     * @return
+     */
+    ChargeOrderInfo queryChargingOrderByChargingGuid(String chargingGuid);
+
+    /**
+     * 查询充电实时数据信息
+     * @param chargingGuid
+     * @return
+     */
+    ChargeRealDataInfo queryChargeRealDataInfo(String chargingGuid);
+
+    /**
+     * 客户微信开电接口
+     * @param chargeVo
+     * @return
+     */
+    WechatChargeInfo wechatCharge(WechatChargeVo chargeVo);
+
+    /**
+     * 客户微信续开电接口
+     * @param rechargeVo
+     * @return
+     */
+    WechatChargeInfo wechatReCharge(WechatRechargeVo rechargeVo);
+
+    /**
+     * 微信支付回调通知
+     * @param paramMap
+     */
+    void wxPayNotify(Map<String, String> paramMap);
+
+    /**
+     * 微信退款结果通知
+     * @param paramMap
+     */
+    void refundResultNotify(Map<String, String> paramMap);
+
+    /**
+     * 客户支付宝开电接口
+     * @param chargeVo
+     * @return
+     */
+    AlipayChargeInfo alipayCharge(AlipayChargeVo chargeVo);
+
+    /**
+     * 客户支付宝续开电接口
+     * @param rechargeVo
+     * @return
+     */
+    AlipayChargeInfo alipayReCharge(AlipayRechargeVo rechargeVo);
+
+    /**
+     * 支付宝回调通知
+     * @param param
+     */
+    void zfbPayNotify(ZfbPayNoticeParam param);
+
+    /**
+     * 分页查询客户充电历史记录
+     * @param historyVo
+     * @return
+     */
+    PageData<ChargeHistoryInfo> queryChargeHistory(ChargeHistoryVo historyVo);
+
+    /**
+     * 分页查询客户充值历史记录
+     * @param historyVo
+     * @return
+     */
+    PageData<PayHistoryInfo> queryPayHistory(PayHistoryVo historyVo);
+
+    /**
+     * 分页查询客户充电设备日志记录
+     * @param listVo
+     * @return
+     */
+    PageData<MessageListInfo> queryMessageListInfo(MessageListVo listVo);
+
+    /**
+     * 查询用户最近一次开电记录
+     * @param customerGuid
+     * @return
+     */
+    LatestChargeOrderInfo queryLatestChargeRecord(String customerGuid);
+
+    /**
+     * 微信活动充值，返回给前端的支付参数
+     * @param rechargeVo
+     * @return
+     */
+    WechatPayOrderInfo wechatBalanceRecharge(WxBalanceRechargeVo rechargeVo);
+
+    /**
+     * 支付宝活动充值
+     * @param rechargeVo
+     * @return
+     */
+    String alipayBalanceRecharge(ZfbBalanceRechargeVo rechargeVo);
+
+    /**
+     * 查询充电完成弹窗或者使用记录点击弹窗信息
+     * @param chargingGuid
+     * @return
+     */
+    ChargeCompleteInfo queryChargeCompleteInfo(String chargingGuid);
+
+    /**
+     * 微信月卡购买接口
+     * @param cardVo
+     * @return
+     */
+    WxMonthRechargeInfo wechatBuyMonthCard(WxBuyMonthCardVo cardVo);
+
+    /**
+     * 支付宝月卡购买接口
+     * @param cardVo
+     * @return
+     */
+    AlipayMonthRechargeInfo alipayBuyMonthCard(ZfbBuyMonthCardVo cardVo);
+
+    /**
+     * 新客户注册
+     * @param registerVo
+     */
+    boolean register(RegisterVo registerVo);
+
+    /**
+     * 修改用户手机号
+     * @param customerGuid
+     * @param mobilePhone
+     * @return
+     */
+    boolean updateCustomerPhone(String customerGuid,String mobilePhone,String validateCode);
+
+    /**
+     * 更新客户信息
+     * @param updateVo
+     */
+    void updateByCustomerGuid(CustomerUpdateVo updateVo);
+
+    /**
+     * 查询用户提现页面新增
+     * @param appType
+     * @param customerGuid
+     * @return
+     */
+    WithdrawCashInfo queryWithdrawCashInfo(Integer appType,String customerGuid);
+
+    /**
+     * 微信IC卡充值
+     * @param rechargeVo
+     * @return
+     */
+    WechatPayOrderInfo iccardRecharge(WxIcCardRechargeVo rechargeVo);
+
+    /**
+     * 支付宝IC卡充值
+     * @param rechargeVo
+     * @return
+     */
+    String alipayIccardRecharge(ZfbIcCardRechargeVo rechargeVo);
+
+    /**
+     * 查询IC卡的使用记录，充值记录等信息
+     * @param cardId
+     * @return
+     */
+    IcCardInfo queryIcCardInfo(String cardId);
+
+    /**
+     * 分页查询客户IC卡使用记录
+     * @param queryVo
+     * @return
+     */
+    PageData<IcCardUseInfo> queryIcCardUseInfo(CardUseQueryVo queryVo);
+
+    /**
+     * 分页查询客户IC卡支付记录
+     * @param queryVo
+     * @return
+     */
+    PageData<IcCardPayInfo> queryIcCardPayInfo(CardPayQueryVo queryVo);
+
+    /**
+     * 查询客户所有充电找中的IC卡列表
+     * @param customerGuid
+     * @return
+     */
+    List<ChargingIcCardInfo> queryChargingIcCardInfo(String customerGuid);
+
+}

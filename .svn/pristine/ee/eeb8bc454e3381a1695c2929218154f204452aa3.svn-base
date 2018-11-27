@@ -1,0 +1,11 @@
+package cn.com.cdboost.charge.customer.service;
+
+import cn.com.cdboost.charge.customer.common.BaseService;
+import cn.com.cdboost.charge.customer.model.DeviceUsePayRelation;
+
+/**
+ * 开电记录与开电充值订单关联表单表接口
+ */
+public interface IDeviceUsePayRelationService extends BaseService<DeviceUsePayRelation>{
+    DeviceUsePayRelation queryByPayFlag(String payFlag);
+}

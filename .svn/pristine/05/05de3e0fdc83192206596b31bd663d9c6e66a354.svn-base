@@ -1,0 +1,81 @@
+package cn.com.cdboost.charge.customer.service.impl;
+
+import cn.com.cdboost.charge.base.vo.PageData;
+import cn.com.cdboost.charge.customer.common.BaseServiceImpl;
+import cn.com.cdboost.charge.customer.constant.CustomerConstant;
+import cn.com.cdboost.charge.customer.dao.CustomerPayCardMapper;
+import cn.com.cdboost.charge.customer.model.CustomerPayCard;
+import cn.com.cdboost.charge.customer.service.ICustomerPayCardService;
+import cn.com.cdboost.charge.customer.vo.param.IncomePageQueryParam;
+import cn.com.cdboost.charge.customer.vo.param.IncomeQueryParam;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+import tk.mybatis.mapper.entity.Condition;
+import tk.mybatis.mapper.entity.Example;
+
+import java.util.List;
+
+/**
+ * 客户充值ic卡单表接口实现
+ */
+@Service
+public class ICustomerPayCardServiceImpl extends BaseServiceImpl<CustomerPayCard> implements ICustomerPayCardService {
+    @Autowired
+    private CustomerPayCardMapper customerPayCardMapper;
+
+    @Override
+    public List<CustomerPayCard> queryCustomerPayCard(IncomeQueryParam queryParam) {
+        Condition condition = new Condition(CustomerPayCard.class);
+        Example.Criteria criteria = condition.createCriteria();
+        if (!StringUtils.isEmpty(queryParam.getProjectGuid())) {
+            criteria.andEqualTo("projectGuid", queryParam.getProjectGuid());
+        }
+        if (!StringUtils.isEmpty(queryParam.getMerchantGuid())) {
+            criteria.andEqualTo("merchantGuid", queryParam.getMerchantGuid());
+        }
+        if (!StringUtils.isEmpty(queryParam.getPropertyGuid())) {
+            criteria.andEqualTo("propertyGuid", queryParam.getPropertyGuid());
+        }
+        if (!CollectionUtils.isEmpty(queryParam.getProjectGuids())){
+            criteria.andIn("projectGuid",queryParam.getProjectGuids());
+        }
+        criteria.andBetween("createTime",queryParam.getBeginTime(),queryParam.getEndTime());
+        criteria.andEqualTo("payState",1);
+        return customerPayCardMapper.selectByCondition(condition);
+    }
+
+    @Override
+    public PageData<CustomerPayCard> queryCustomerPayCardPage(IncomePageQueryParam queryParam) {
+        PageData<CustomerPayCard> pageData = new PageData<>();
+        Condition condition = new Condition(CustomerPayCard.class);
+        Example.Criteria criteria = condition.createCriteria();
+        if (!StringUtils.isEmpty(queryParam.getProjectGuid())) {
+            criteria.andEqualTo("projectGuid", queryParam.getProjectGuid());
+        }
+        if (!StringUtils.isEmpty(queryParam.getCardId())) {
+            criteria.andEqualTo("card_id", queryParam.getCardId());
+        }
+        criteria.andBetween("createTime",queryParam.getBeginTime(),queryParam.getEndTime());
+        criteria.andEqualTo("payState",1);
+        PageHelper.startPage(queryParam.getPageNumber(),queryParam.getPageSize(),"id desc");
+        List<CustomerPayCard> customerPayCards = customerPayCardMapper.selectByCondition(condition);
+        PageInfo<CustomerPayCard> pageInfo = new PageInfo<>(customerPayCards);
+        pageData.setList(customerPayCards);
+        pageData.setTotal(pageInfo.getTotal());
+        return pageData;
+    }
+
+    @Override
+    public List<CustomerPayCard> queryRecentNList(String cardId, Integer number) {
+        Condition condition = new Condition(CustomerPayCard.class);
+        Example.Criteria criteria = condition.createCriteria();
+        criteria.andEqualTo("cardId",cardId);
+        criteria.andEqualTo("payState", CustomerConstant.PayState.PAY_SUCCESS.getState());
+        condition.setOrderByClause("id desc limit " + number);
+        return customerPayCardMapper.selectByCondition(condition);
+    }
+}

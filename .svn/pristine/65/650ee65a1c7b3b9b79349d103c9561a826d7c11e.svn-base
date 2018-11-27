@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.cdboost.charge.customer.dao.CustomerPayMapper">
+  <resultMap id="BaseResultMap" type="cn.com.cdboost.charge.customer.model.CustomerPay">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="customer_guid" jdbcType="VARCHAR" property="customerGuid" />
+    <result column="business_type" jdbcType="INTEGER" property="businessType" />
+    <result column="webchar_no" jdbcType="VARCHAR" property="webcharNo" />
+    <result column="merchant_guid" jdbcType="CHAR" property="merchantGuid" />
+    <result column="property_guid" jdbcType="CHAR" property="propertyGuid" />
+    <result column="project_guid" jdbcType="CHAR" property="projectGuid" />
+    <result column="scheme_guid" jdbcType="VARCHAR" property="schemeGuid" />
+    <result column="pay_category" jdbcType="INTEGER" property="payCategory" />
+    <result column="num_months" jdbcType="INTEGER" property="numMonths" />
+    <result column="buy_cnt" jdbcType="INTEGER" property="buyCnt" />
+    <result column="expire_time" jdbcType="TIMESTAMP" property="expireTime" />
+    <result column="pay_money" jdbcType="DECIMAL" property="payMoney" />
+    <result column="account_charge_money" jdbcType="DECIMAL" property="accountChargeMoney" />
+    <result column="account_deduct_money" jdbcType="DECIMAL" property="accountDeductMoney" />
+    <result column="charging_time" jdbcType="INTEGER" property="chargingTime" />
+    <result column="serial_num" jdbcType="VARCHAR" property="serialNum" />
+    <result column="pay_flag" jdbcType="VARCHAR" property="payFlag" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="pay_state" jdbcType="INTEGER" property="payState" />
+    <result column="refund_state" jdbcType="INTEGER" property="refundState" />
+    <result column="after_remain_amount" jdbcType="DECIMAL" property="afterRemainAmount" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="pay_way" jdbcType="INTEGER" property="payWay" />
+    <result column="card_id" jdbcType="VARCHAR" property="cardId" />
+  </resultMap>
+
+
+  <resultMap id="chargeRecordListMap" type="cn.com.cdboost.charge.customer.dto.info.ChargeRecordListDaoInfo">
+    <result column="create_time" jdbcType="VARCHAR" property="date" />
+    <result column="pay_way" jdbcType="VARCHAR" property="payMethod" />
+    <result column="pay_money" jdbcType="VARCHAR" property="payMoney" />
+    <result column="after_remain_amount" jdbcType="VARCHAR" property="remainAmount" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="pay_state" jdbcType="VARCHAR" property="payState" />
+  </resultMap>
+  <select id="chargeRecordList" parameterType="cn.com.cdboost.charge.customer.dto.ChargeRecordListDaoDto" resultMap="chargeRecordListMap">
+    SELECT
+    t.pay_state,
+    t.create_time,
+    t.pay_way,
+    t.pay_money,
+    t.after_remain_amount,
+    CASE t.pay_way
+    WHEN 1 THEN
+    d.customer_name
+    WHEN 2 THEN
+    d.alipay_nick_name
+    END user_id
+    FROM
+    cp_d_customer_pay t
+    INNER JOIN cp_d_customer_info d ON t.customer_guid = d.customer_guid
+    AND d.customer_guid=#{chargeRecordListDto.customerGuid}
+    AND t.create_time BETWEEN #{chargeRecordListDto.startDate}
+    AND concat(#{chargeRecordListDto.endDate},' 23:59:59')
+    <where>
+      <if test="chargeRecordListDto.payMethod !=0 ">
+        AND t.pay_way=#{chargeRecordListDto.payMethod}
+      </if>
+      <if test="chargeRecordListDto.payState !=2 ">
+        AND t.pay_state=#{chargeRecordListDto.payState}
+      </if>
+    </where>
+    ORDER BY t.create_time DESC
+  </select>
+
+
+  <!-- 支付成功批量更新，状态和时间 -->
+  <update id="batchUpdate" parameterType="java.util.List">
+    <foreach index="index" item="item" collection="list" close="" open="" separator=";" >
+      update cp_d_customer_pay
+      <set>
+        <if test="item.payState != null">
+          pay_state = #{item.payState,jdbcType=INTEGER},
+        </if>
+        <if test="item.payState != null">
+          refund_state =  #{item.refundState,jdbcType=INTEGER},
+        </if>
+        <if test="item.payState != null">
+          update_time = #{item.updateTime,jdbcType=TIMESTAMP}
+        </if>
+      </set>
+      <where>
+        id = #{item.id, jdbcType=INTEGER}
+      </where>
+    </foreach>
+  </update>
+</mapper>

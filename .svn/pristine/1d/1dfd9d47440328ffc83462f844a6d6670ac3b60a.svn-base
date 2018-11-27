@@ -1,0 +1,13 @@
+# Druid Datasource配置
+spring:
+  datasource:
+    druid:
+#      db-type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://10.10.1.150:3306/cloud_charging_customer?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia%2FShanghai&useSSL=true&allowMultiQueries=true&nullNamePatternMatchesAll=true
+      username: root
+      password: boost@mysql.150
+
+logging:
+  config: classpath:logback-spring.xml
+  path: D:/logs/charge-customer

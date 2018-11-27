@@ -1,0 +1,21 @@
+package cn.com.cdboost.charge.customer.dao;
+
+import cn.com.cdboost.charge.customer.common.CommonMapper;
+import cn.com.cdboost.charge.customer.model.DeviceUseDetailed;
+import cn.com.cdboost.charge.customer.vo.info.ChargeCustomerInfoDetailInfo;
+import cn.com.cdboost.charge.customer.vo.info.UseRecordListDto;
+import cn.com.cdboost.charge.customer.vo.info.UseRecordListInfo;
+import cn.com.cdboost.charge.merchant.vo.dto.CustomerInfoListDto;
+import cn.com.cdboost.charge.merchant.vo.dto.CustomerInfoListInfo;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+
+public interface DeviceUseDetailedMapper extends CommonMapper<DeviceUseDetailed> {
+
+    List<CustomerInfoListInfo> customerInfoList(@Param("customerInfoListDto") CustomerInfoListDto customerInfoListDto);
+
+    ChargeCustomerInfoDetailInfo customerInfoDetail(@Param("customerGuid") String customerGuid);
+
+    List<UseRecordListInfo> useRecordList(@Param("useRecordListDto") UseRecordListDto useRecordListDto);
+}

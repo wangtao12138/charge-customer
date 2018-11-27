@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.cdboost.charge.customer.dao.DeviceLogMapper">
+  <resultMap id="BaseResultMap" type="cn.com.cdboost.charge.customer.model.DeviceLog">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="charging_plie_guid" jdbcType="CHAR" property="chargingPlieGuid" />
+    <result column="port" jdbcType="CHAR" property="port" />
+    <result column="event_code" jdbcType="INTEGER" property="eventCode" />
+    <result column="event_content" jdbcType="VARCHAR" property="eventContent" />
+    <result column="sms_content" jdbcType="VARCHAR" property="smsContent" />
+    <result column="current" jdbcType="DECIMAL" property="current" />
+    <result column="voltage" jdbcType="DECIMAL" property="voltage" />
+    <result column="power" jdbcType="DECIMAL" property="power" />
+    <result column="active_total" jdbcType="DECIMAL" property="activeTotal" />
+    <result column="remain_time" jdbcType="DECIMAL" property="remainTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="charging_percent" jdbcType="DECIMAL" property="chargingPercent" />
+    <result column="charging_guid" jdbcType="CHAR" property="chargingGuid" />
+    <result column="sms_status" jdbcType="INTEGER" property="smsStatus" />
+  </resultMap>
+
+  <!-- 查询设备充电日志 -->
+  <select id="queryLogMessageList" parameterType="cn.com.cdboost.charge.customer.dto.param.MessageListQueryDto"
+          resultType="cn.com.cdboost.charge.customer.dto.info.MessageListDto">
+    select t0.charging_plie_guid AS chargingPlieGuid,
+    t0.event_code AS eventCode,
+    t0.sms_content AS smsContent,
+    t0.create_time AS createTime,
+    t0.charging_guid AS chargingGuid
+    from cp_d_device_log t0
+    INNER JOIN cp_d_device_use_detailed t1 ON t0.charging_guid=t1.charging_guid
+    <where>
+      t1.customer_guid=#{customerGuid} AND t0.event_code=0
+    </where>
+    ORDER BY t0.id DESC
+    limit #{pageIndex},#{pageSize};
+  </select>
+
+  <!-- 查询设备充电日志 -->
+  <select id="queryLogMessageListCount" parameterType="cn.com.cdboost.charge.customer.dto.param.MessageListQueryDto"
+          resultType="java.lang.Long">
+    select count(*)
+    from cp_d_device_log t0
+    INNER JOIN cp_d_device_use_detailed t1 ON t0.charging_guid=t1.charging_guid
+    <where>
+      t1.customer_guid=#{customerGuid} AND t0.event_code=0
+    </where>
+  </select>
+
+  <select id="queryCurve" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT t.id,t.create_time,current,voltage,power FROM cp_d_device_log t WHERE t.charging_plie_guid=#{chargingPlieGuid}
+    <if test="chargingGuid!=null and chargingGuid!=''">
+      AND t.charging_guid = #{chargingGuid}
+    </if>
+    ORDER BY t.id
+  </select>
+</mapper>

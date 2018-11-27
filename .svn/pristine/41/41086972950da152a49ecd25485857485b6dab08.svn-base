@@ -1,0 +1,11 @@
+package cn.com.cdboost.charge.customer.service;
+
+import cn.com.cdboost.charge.customer.common.BaseService;
+import cn.com.cdboost.charge.customer.model.OrgZfbAuthConfig;
+
+/**
+ * 组织与支付宝授权信息关联表单表接口
+ */
+public interface OrgZfbAuthConfigService extends BaseService<OrgZfbAuthConfig>{
+
+}
